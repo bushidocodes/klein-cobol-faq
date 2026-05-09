@@ -1,0 +1,18 @@
+{
+	"name": "klein-cobol-faq",
+	"private": true,
+	"description": "Static-site checks for William M. Klein's COBOL FAQ.",
+	"scripts": {
+		"serve": "http-server . --cors -c-1 -p 8000 --silent",
+		"validate": "html-validate index.html",
+		"links:run": "linkinator http://localhost:8000 --config linkinator.config.json",
+		"links": "start-server-and-test serve http://localhost:8000 links:run",
+		"check": "npm run validate && npm run links"
+	},
+	"devDependencies": {
+		"html-validate": "^9.0.0",
+		"http-server": "^14.1.1",
+		"linkinator": "^6.1.2",
+		"start-server-and-test": "^2.0.13"
+	}
+}
