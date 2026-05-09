@@ -15,3 +15,22 @@ The FAQ HTML is a near-verbatim Microsoft Word "Save as Web Page" export — for
 - `index.html` — the FAQ itself (originally `COBOLFAQ.html`)
 - `images/` — figures referenced from the FAQ
 - `COBOL FAQ (word).doc` — the original Word source
+
+## Development
+
+The site is plain static HTML — no build step. To preview locally:
+
+```sh
+npm install
+npm run serve   # http://localhost:8000
+```
+
+CI runs two checks on every PR (see [.github/workflows/checks.yml](.github/workflows/checks.yml)):
+
+| Script             | What it does                                              |
+| ------------------ | --------------------------------------------------------- |
+| `npm run validate` | HTML parse / structure check via `html-validate`          |
+| `npm run links`    | Internal link check via `linkinator` (externals skipped)  |
+| `npm run check`    | Runs both locally                                         |
+
+The `html-validate` ruleset is intentionally permissive — the FAQ is a verbatim Word "Save as Web Page" export, so the gate focuses on parse errors and structural bugs rather than flagging every legacy-HTML pattern. Tighten over time if the source gets cleaned up.
