@@ -7,9 +7,28 @@
 		"close-order": "error",
 		"missing-doctype": "error",
 
-		"element-required-attributes": "off",
-		"require-sri": "off",
-		"heading-level": "off",
-		"input-missing-label": "off"
+		"element-required-attributes": "error",
+		"require-sri": "error",
+		"heading-level": ["error", { "minInitialRank": "h3" }],
+		"input-missing-label": "error",
+
+		"no-deprecated-attr": "error",
+		"no-missing-references": "error",
+		"no-raw-characters": "error",
+		"void-style": "error",
+
+		"deprecated": "error",
+		"attr-quotes": "error",
+		"attr-case": "error",
+		"element-case": "error",
+		"void-content": "error",
+		"empty-title": "error",
+		"text-content": "error",
+		"script-element": "error",
+
+		"wcag/h30": "error",
+		"wcag/h37": "error",
+		"wcag/h63": "error",
+		"wcag/h67": "error"
 	}
 }
