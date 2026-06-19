@@ -42,6 +42,6 @@
 		"map-dup-name": "error",
 		"no-redundant-for": "error",
 		"svg-focusable": "error",
-		"id-pattern": ["error", { "pattern": "^[A-Za-z][A-Za-z0-9_:.-]*$" }]
+		"id-pattern": ["error", { "pattern": "/^[A-Za-z][A-Za-z0-9_:.-]*$/" }]
 	}
 }
