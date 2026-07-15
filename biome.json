@@ -13,7 +13,7 @@
 			".htmlvalidate.json",
 			"linkinator.config.json",
 			"index.html",
-			"!!css/word-mso.css",
+			"css/word-mso.css",
 			"!!images",
 			"!!**/*.{doc,docx,png,jpg,jpeg,gif,ico,webp}"
 		]
@@ -32,13 +32,6 @@
 			"a11y": {
 				"recommended": false
 			},
-			"correctness": {
-				"noUnknownProperty": "off"
-			},
-			"suspicious": {
-				"noUnknownAtRules": "off",
-				"noUselessEscapeInString": "off"
-			},
 			"complexity": {
 				"noImportantStyles": "off"
 			}
@@ -50,11 +43,11 @@
 		}
 	},
 	"css": {
-		"linter": {
+		"formatter": {
 			"enabled": true
 		},
-		"parser": {
-			"cssModules": false
+		"linter": {
+			"enabled": true
 		}
 	},
 	"json": {
