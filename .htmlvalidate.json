@@ -8,7 +8,7 @@
 		"missing-doctype": "error",
 
 		"element-required-attributes": "error",
-		"require-sri": "error",
+		"require-sri": ["error", { "target": "crossorigin" }],
 		"heading-level": ["error", { "minInitialRank": "h3" }],
 		"input-missing-label": "error",
 
