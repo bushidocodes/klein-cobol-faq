@@ -7,9 +7,14 @@
 		"validate": "html-validate index.html",
 		"links:run": "linkinator http://localhost:8000 --config linkinator.config.json",
 		"links": "start-server-and-test serve http://localhost:8000 links:run",
-		"check": "npm run validate && npm run links"
+		"check": "npm run validate && npm run links",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write .",
+		"format:check": "biome format ."
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.5.3",
 		"html-validate": "^11.5.3",
 		"http-server": "^14.1.1",
 		"linkinator": "^7.0.0",

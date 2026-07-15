@@ -30,7 +30,8 @@ CI runs two checks on every PR (see [.github/workflows/checks.yml](.github/workf
 | Script             | What it does                                              |
 | ------------------ | --------------------------------------------------------- |
 | `npm run validate` | HTML parse / structure check via `html-validate`          |
+| `npm run lint`     | Biome check on project JSON/config (FAQ HTML is excluded) |
 | `npm run links`    | Internal link check via `linkinator` (externals skipped)  |
-| `npm run check`    | Runs both locally                                         |
+| `npm run check`    | Runs validate + links locally                             |
 
 The `html-validate` ruleset is intentionally permissive — the FAQ is a verbatim Word "Save as Web Page" export, so the gate focuses on parse errors and structural bugs rather than flagging every legacy-HTML pattern. Tighten over time if the source gets cleaned up.
