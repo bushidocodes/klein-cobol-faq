@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en"
+<html
+	lang="en"
 	xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
 	xmlns:o="urn:schemas-microsoft-com:office:office"
 	xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
@@ -15,1405 +16,123 @@
 
 		<title>COBOL FAQ</title>
 
-
-
-		<style>
-			<!--
-			 /* Font Definitions */
-			 @font-face
-			        {font-family:Courier;
-			        panose-1:2 7 4 9 2 2 5 2 4 4;
-			        mso-font-alt:"Courier New";
-			        mso-font-charset:0;
-			        mso-generic-font-family:modern;
-			        mso-font-format:other;
-			        mso-font-pitch:fixed;
-			        mso-font-signature:3 0 0 0 1 0;}
-			@font-face
-			        {font-family:Wingdings;
-			        panose-1:5 0 0 0 0 0 0 0 0 0;
-			        mso-font-charset:2;
-			        mso-generic-font-family:auto;
-			        mso-font-pitch:variable;
-			        mso-font-signature:0 268435456 0 0 -2147483648 0;}
-			@font-face
-			        {font-family:"Arial Unicode MS";
-			        panose-1:2 11 6 4 2 2 2 2 2 4;
-			        mso-font-charset:128;
-			        mso-generic-font-family:swiss;
-			        mso-font-pitch:variable;
-			        mso-font-signature:-1 -369098753 63 0 4129279 0;}
-			@font-face
-			        {font-family:Tahoma;
-			        panose-1:2 11 6 4 3 5 4 4 2 4;
-			        mso-font-charset:0;
-			        mso-generic-font-family:swiss;
-			        mso-font-pitch:variable;
-			        mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
-			@font-face
-			        {font-family:"Arial Black";
-			        panose-1:2 11 10 4 2 1 2 2 2 4;
-			        mso-font-charset:0;
-			        mso-generic-font-family:swiss;
-			        mso-font-pitch:variable;
-			        mso-font-signature:647 0 0 0 159 0;}
-			@font-face
-			        {font-family:Verdana;
-			        panose-1:2 11 6 4 3 5 4 4 2 4;
-			        mso-font-charset:0;
-			        mso-generic-font-family:swiss;
-			        mso-font-pitch:variable;
-			        mso-font-signature:536871559 0 0 0 415 0;}
-			@font-face
-			        {font-family:"\@Arial Unicode MS";
-			        panose-1:2 11 6 4 2 2 2 2 2 4;
-			        mso-font-charset:128;
-			        mso-generic-font-family:swiss;
-			        mso-font-pitch:variable;
-			        mso-font-signature:-1 -369098753 63 0 4129279 0;}
-			 /* Style Definitions */
-			 p.MsoNormal, li.MsoNormal, div.MsoNormal
-			        {mso-style-parent:"";
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			h1
-			        {mso-margin-top-alt:auto;
-			        margin-right:0in;
-			        mso-margin-bottom-alt:auto;
-			        margin-left:0in;
-			        mso-pagination:widow-orphan;
-			        mso-outline-level:1;
-			        font-size:24.0pt;
-			        font-family:"Arial Unicode MS";
-			        color:black;
-			        font-weight:bold;}
-			h2
-			        {mso-margin-top-alt:auto;
-			        margin-right:0in;
-			        mso-margin-bottom-alt:auto;
-			        margin-left:0in;
-			        mso-pagination:widow-orphan;
-			        mso-outline-level:2;
-			        font-size:18.0pt;
-			        font-family:"Arial Unicode MS";
-			        color:black;
-			        font-weight:bold;}
-			h3
-			        {mso-style-next:Normal;
-			        margin-top:12.0pt;
-			        margin-right:0in;
-			        margin-bottom:3.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:3;
-			        layout-grid-mode:char;
-			        font-size:13.0pt;
-			        font-family:Arial;
-			        mso-fareast-font-family:"Times New Roman";
-			        font-weight:bold;}
-			p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
-			        {mso-style-noshow:yes;
-			        margin:0in;
-			        margin-bottom:.0001pt;
-			        mso-pagination:widow-orphan;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			span.MsoCommentReference
-			        {mso-style-noshow:yes;
-			        mso-ansi-font-size:8.0pt;
-			        mso-bidi-font-size:8.0pt;}
-			p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
-			        {mso-style-noshow:yes;
-			        mso-style-parent:"";
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        tab-stops:24.0pt 48.0pt 1.0in 96.0pt 120.0pt 2.0in 168.0pt 192.0pt 3.0in;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Courier New";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
-			        {margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        mso-pagination:none;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
-			        {margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:.5in;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
-			        {margin-top:0in;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        text-indent:.5in;
-			        mso-pagination:none;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
-			        {margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:.5in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			a:link, span.MsoHyperlink
-			        {color:blue;
-			        text-decoration:underline;
-			        text-underline:single;}
-			a:visited, span.MsoHyperlinkFollowed
-			        {color:purple;
-			        text-decoration:underline;
-			        text-underline:single;}
-			strong
-			        {mso-bidi-font-weight:normal;}
-			em
-			        {mso-bidi-font-style:normal;}
-			p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
-			        {mso-style-noshow:yes;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        background:navy;
-			        font-size:10.0pt;
-			        font-family:Tahoma;
-			        mso-fareast-font-family:"Times New Roman";
-			        mso-bidi-font-family:"Times New Roman";}
-			p
-			        {mso-margin-top-alt:auto;
-			        margin-right:0in;
-			        mso-margin-bottom-alt:auto;
-			        margin-left:0in;
-			        mso-pagination:widow-orphan;
-			        font-size:12.0pt;
-			        font-family:"Arial Unicode MS";}
-			p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
-			        {mso-style-name:"Definition Term";
-			        mso-style-next:"Definition List";
-			        margin:0in;
-			        margin-bottom:.0001pt;
-			        text-align:justify;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.DefinitionList, li.DefinitionList, div.DefinitionList
-			        {mso-style-name:"Definition List";
-			        mso-style-next:"Definition Term";
-			        margin-top:0in;
-			        margin-right:0in;
-			        margin-bottom:0in;
-			        margin-left:.25in;
-			        margin-bottom:.0001pt;
-			        text-align:justify;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.H1, li.H1, div.H1
-			        {mso-style-name:H1;
-			        mso-style-next:Normal;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:2;
-			        layout-grid-mode:char;
-			        font-size:24.0pt;
-			        mso-bidi-font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        mso-font-kerning:18.0pt;
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;}
-			p.H2, li.H2, div.H2
-			        {mso-style-name:H2;
-			        mso-style-next:Normal;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:3;
-			        layout-grid-mode:char;
-			        font-size:18.0pt;
-			        mso-bidi-font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;}
-			p.H3, li.H3, div.H3
-			        {mso-style-name:H3;
-			        mso-style-next:Normal;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:4;
-			        layout-grid-mode:char;
-			        font-size:14.0pt;
-			        mso-bidi-font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;
-			        text-decoration:underline;
-			        text-underline:single;}
-			p.H4, li.H4, div.H4
-			        {mso-style-name:H4;
-			        mso-style-next:Normal;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:5;
-			        layout-grid-mode:char;
-			        font-size:12.0pt;
-			        mso-bidi-font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;}
-			p.H5, li.H5, div.H5
-			        {mso-style-name:H5;
-			        mso-style-next:Normal;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:6;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;}
-			p.H6, li.H6, div.H6
-			        {mso-style-name:H6;
-			        mso-style-next:Normal;
-			        margin-top:5.0pt;
-			        margin-right:0in;
-			        margin-bottom:5.0pt;
-			        margin-left:0in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        page-break-after:avoid;
-			        mso-outline-level:7;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;
-			        font-style:italic;
-			        mso-bidi-font-style:normal;}
-			p.Address, li.Address, div.Address
-			        {mso-style-name:Address;
-			        mso-style-next:Normal;
-			        margin:0in;
-			        margin-bottom:.0001pt;
-			        text-align:justify;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";
-			        font-style:italic;
-			        mso-bidi-font-style:normal;}
-			p.Blockquote, li.Blockquote, div.Blockquote
-			        {mso-style-name:Blockquote;
-			        margin-top:5.0pt;
-			        margin-right:.25in;
-			        margin-bottom:5.0pt;
-			        margin-left:.25in;
-			        text-align:justify;
-			        mso-pagination:none;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Times New Roman";
-			        mso-fareast-font-family:"Times New Roman";}
-			p.Preformatted, li.Preformatted, div.Preformatted
-			        {mso-style-name:Preformatted;
-			        margin:0in;
-			        margin-bottom:.0001pt;
-			        text-align:justify;
-			        mso-pagination:none;
-			        tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
-			        layout-grid-mode:char;
-			        font-size:10.0pt;
-			        font-family:"Courier New";
-			        mso-fareast-font-family:"Times New Roman";
-			        mso-bidi-font-family:"Times New Roman";}
-			span.Definition
-			        {mso-style-name:Definition;
-			        mso-style-parent:"";
-			        font-style:italic;
-			        mso-bidi-font-style:normal;}
-			span.CITE
-			        {mso-style-name:CITE;
-			        mso-style-parent:"";
-			        font-style:italic;
-			        mso-bidi-font-style:normal;}
-			span.CODE
-			        {mso-style-name:CODE;
-			        mso-style-parent:"";
-			        mso-ansi-font-size:10.0pt;
-			        font-family:"Courier New";
-			        mso-ascii-font-family:"Courier New";
-			        mso-hansi-font-family:"Courier New";
-			        mso-bidi-font-family:"Courier New";}
-			span.Keyboard
-			        {mso-style-name:Keyboard;
-			        mso-style-parent:"";
-			        mso-ansi-font-size:10.0pt;
-			        font-family:"Courier New";
-			        mso-ascii-font-family:"Courier New";
-			        mso-hansi-font-family:"Courier New";
-			        mso-bidi-font-family:"Courier New";
-			        font-weight:bold;
-			        mso-bidi-font-weight:normal;}
-			span.Sample
-			        {mso-style-name:Sample;
-			        mso-style-parent:"";
-			        font-family:"Courier New";
-			        mso-ascii-font-family:"Courier New";
-			        mso-hansi-font-family:"Courier New";
-			        mso-bidi-font-family:"Courier New";}
-			span.Typewriter
-			        {mso-style-name:Typewriter;
-			        mso-style-parent:"";
-			        mso-ansi-font-size:10.0pt;
-			        font-family:"Courier New";
-			        mso-ascii-font-family:"Courier New";
-			        mso-hansi-font-family:"Courier New";
-			        mso-bidi-font-family:"Courier New";}
-			span.Variable
-			        {mso-style-name:Variable;
-			        mso-style-parent:"";
-			        font-style:italic;
-			        mso-bidi-font-style:normal;}
-			span.HTMLMarkup
-			        {mso-style-name:"HTML Markup";
-			        mso-style-parent:"";
-			        color:red;
-			        display:none;
-			        mso-hide:all;}
-			span.Comment
-			        {mso-style-name:Comment;
-			        mso-style-parent:"";
-			        display:none;
-			        mso-hide:all;}
-			span.strobe1
-			        {mso-style-name:strobe1;
-			        mso-ansi-font-size:9.0pt;
-			        mso-bidi-font-size:9.0pt;}
-			 /* Page Definitions */
-			 @page
-			        {mso-page-border-surround-header:no;
-			        mso-page-border-surround-footer:no;}
-			@page Section1
-			        {size:8.5in 11.0in;
-			        margin:.25in .25in .55in .25in;
-			        mso-header-margin:1.0in;
-			        mso-footer-margin:1.0in;
-			        mso-paper-source:0;}
-			div.Section1
-			        {page:Section1;}
-			 /* List Definitions */
-			 @list l0
-			        {mso-list-id:-2;
-			        mso-list-type:simple;
-			        mso-list-template-ids:-1;}
-			@list l0:level1
-			        {mso-level-start-at:0;
-			        mso-level-text:*;
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        margin-left:0in;
-			        text-indent:0in;}
-			@list l1
-			        {mso-list-id:2;
-			        mso-list-template-ids:1041655444;}
-			@list l1:level1
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level2
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level3
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level4
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level5
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level6
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level7
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level8
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l1:level9
-			        {mso-level-start-at:0;
-			        mso-level-text:"";
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        margin-left:0in;
-			        text-indent:0in;}
-			@list l2
-			        {mso-list-id:3;
-			        mso-list-template-ids:-1624366252;}
-			@list l2:level1
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level2
-			        {mso-level-number-format:alpha-upper;
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        margin-left:0in;
-			        text-indent:0in;}
-			@list l2:level3
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level4
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level5
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level6
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level7
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level8
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l2:level9
-			        {mso-level-start-at:0;
-			        mso-level-text:"";
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        margin-left:0in;
-			        text-indent:0in;}
-			@list l3
-			        {mso-list-id:6;
-			        mso-list-template-ids:-1141571672;}
-			@list l3:level1
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level2
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level3
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level4
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level5
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level6
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level7
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level8
-			        {mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l3:level9
-			        {mso-level-start-at:0;
-			        mso-level-text:"";
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        margin-left:0in;
-			        text-indent:0in;}
-			@list l4
-			        {mso-list-id:187646862;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l4:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l5
-			        {mso-list-id:221646575;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l5:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l6
-			        {mso-list-id:387997182;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:1127909332 1192514458 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l6:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0A7;
-			        mso-level-tab-stop:.75in;
-			        mso-level-number-position:left;
-			        margin-left:.75in;
-			        text-indent:-.25in;
-			        font-family:Wingdings;}
-			@list l6:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l6:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7
-			        {mso-list-id:412090816;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:-1379605962 1192514458 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l7:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0A7;
-			        mso-level-tab-stop:.75in;
-			        mso-level-number-position:left;
-			        margin-left:.75in;
-			        text-indent:-.25in;
-			        font-family:Wingdings;}
-			@list l7:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l7:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8
-			        {mso-list-id:479807470;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:1737365358 -990463076 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l8:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;
-			        color:windowtext;}
-			@list l8:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l8:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l9
-			        {mso-list-id:630090685;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l9:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l10
-			        {mso-list-id:782460569;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:-1617120988 -990463076 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l10:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;
-			        color:windowtext;}
-			@list l10:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l10:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l11
-			        {mso-list-id:1105267898;
-			        mso-list-template-ids:-1454470576;}
-			@list l11:level1
-			        {mso-level-text:"%1\)";
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l11:level2
-			        {mso-level-number-format:alpha-lower;
-			        mso-level-text:"%2\)";
-			        mso-level-tab-stop:.75in;
-			        mso-level-number-position:left;
-			        margin-left:.75in;
-			        text-indent:-.25in;}
-			@list l11:level3
-			        {mso-level-number-format:roman-lower;
-			        mso-level-text:"%3\)";
-			        mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        margin-left:1.0in;
-			        text-indent:-.25in;}
-			@list l11:level4
-			        {mso-level-text:"\(%4\)";
-			        mso-level-tab-stop:1.25in;
-			        mso-level-number-position:left;
-			        margin-left:1.25in;
-			        text-indent:-.25in;}
-			@list l11:level5
-			        {mso-level-number-format:alpha-lower;
-			        mso-level-text:"\(%5\)";
-			        mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        margin-left:1.5in;
-			        text-indent:-.25in;}
-			@list l11:level6
-			        {mso-level-number-format:roman-lower;
-			        mso-level-text:"\(%6\)";
-			        mso-level-tab-stop:1.75in;
-			        mso-level-number-position:left;
-			        margin-left:1.75in;
-			        text-indent:-.25in;}
-			@list l11:level7
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        margin-left:2.0in;
-			        text-indent:-.25in;}
-			@list l11:level8
-			        {mso-level-number-format:alpha-lower;
-			        mso-level-tab-stop:2.25in;
-			        mso-level-number-position:left;
-			        margin-left:2.25in;
-			        text-indent:-.25in;}
-			@list l11:level9
-			        {mso-level-number-format:roman-lower;
-			        mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        margin-left:2.5in;
-			        text-indent:-.25in;}
-			@list l12
-			        {mso-list-id:1178084593;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l12:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l13
-			        {mso-list-id:1192718561;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:2048659716 1502253772 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l13:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0A7;
-			        mso-level-tab-stop:1.25in;
-			        mso-level-number-position:left;
-			        margin-left:1.25in;
-			        text-indent:-.25in;
-			        font-family:Wingdings;}
-			@list l13:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l13:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14
-			        {mso-list-id:1336230693;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:1832126216 879381260 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l14:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;
-			        color:windowtext;}
-			@list l14:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l14:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15
-			        {mso-list-id:1465081229;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:-1894329022 -990463076 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l15:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;
-			        color:windowtext;}
-			@list l15:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l15:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16
-			        {mso-list-id:1504280283;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:-683346534 -1 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l16:level1
-			        {mso-level-start-at:0;
-			        mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        mso-level-legacy:yes;
-			        mso-level-legacy-indent:.25in;
-			        mso-level-legacy-space:0in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l16:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l16:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l17
-			        {mso-list-id:1578980040;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l17:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l18
-			        {mso-list-id:1635062517;
-			        mso-list-template-ids:-283095026;}
-			@list l18:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;}
-			@list l18:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l18:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l19
-			        {mso-list-id:1662809066;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l19:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l20
-			        {mso-list-id:1672415409;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l20:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l21
-			        {mso-list-id:1747919208;
-			        mso-list-type:hybrid;
-			        mso-list-template-ids:-1412134276 879381260 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-			@list l21:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;}
-			@list l21:level2
-			        {mso-level-number-format:bullet;
-			        mso-level-text:o;
-			        mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        font-family:"Courier New";}
-			@list l21:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l21:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l21:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l21:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l21:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l21:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l21:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l22
-			        {mso-list-id:1755854229;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l22:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l23
-			        {mso-list-id:1938521300;
-			        mso-list-type:simple;
-			        mso-list-template-ids:67698689;}
-			@list l23:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.25in;
-			        mso-level-number-position:left;
-			        margin-left:.25in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l24
-			        {mso-list-id:2100248517;
-			        mso-list-template-ids:904810738;}
-			@list l24:level1
-			        {mso-level-number-format:bullet;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;
-			        mso-ansi-font-size:10.0pt;
-			        font-family:Symbol;}
-			@list l24:level2
-			        {mso-level-tab-stop:1.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level3
-			        {mso-level-tab-stop:1.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level4
-			        {mso-level-tab-stop:2.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level5
-			        {mso-level-tab-stop:2.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level6
-			        {mso-level-tab-stop:3.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level7
-			        {mso-level-tab-stop:3.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level8
-			        {mso-level-tab-stop:4.0in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l24:level9
-			        {mso-level-tab-stop:4.5in;
-			        mso-level-number-position:left;
-			        text-indent:-.25in;}
-			@list l0:level1 lfo7
-			        {mso-level-number-format:bullet;
-			        mso-level-numbering:continue;
-			        mso-level-text:\F0B7;
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        mso-level-legacy:yes;
-			        mso-level-legacy-indent:.25in;
-			        mso-level-legacy-space:0in;
-			        margin-left:0in;
-			        text-indent:-.25in;
-			        font-family:Symbol;}
-			@list l3:level1 lfo11
-			        {mso-level-number-format:alpha-lower;
-			        mso-level-numbering:continue;
-			        mso-level-tab-stop:none;
-			        mso-level-number-position:left;
-			        margin-left:0in;
-			        text-indent:0in;}
-			ol
-			        {margin-bottom:0in;}
-			ul
-			        {margin-bottom:0in;}
-			-->
-		</style>
-
-
+		<link href="css/word-mso.css" rel="stylesheet">
 
 		<style type="text/css">
-			img {
-				max-width: 100%;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		table {
+			max-width: 100%;
+		}
+		pre {
+			overflow-x: auto;
+			max-width: 100%;
+		}
+		body {
+			-webkit-text-size-adjust: 100%;
+		}
+		@media (max-width: 600px) {
+			body {
+				margin: 4px;
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			}
+			table[width] {
+				width: 100% !important;
+				height: auto !important;
+			}
+			td[width],
+			th[width],
+			td[height],
+			th[height] {
+				width: auto !important;
+				height: auto !important;
+			}
+			td[bgcolor="#993300"] > h2,
+			td[bgcolor="#993300"] > h3 {
+				margin: 0.3em 0;
+			}
+			blockquote {
+				margin-left: 12px;
+				margin-right: 12px;
+			}
+			hr[width] {
+				width: 100% !important;
+			}
+			img,
+			iframe,
+			video,
+			embed,
+			object {
+				max-width: min(100%, calc(100vw - 16px)) !important;
 				height: auto;
 			}
-			table {
-				max-width: 100%;
-			}
 			pre {
-				overflow-x: auto;
-				max-width: 100%;
+				max-width: min(100%, calc(100vw - 16px)) !important;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+				overflow-wrap: break-word;
 			}
-			body {
-				-webkit-text-size-adjust: 100%;
+			table[width="715"],
+			table[width="725"],
+			table[width="715"] > tbody,
+			table[width="725"] > tbody,
+			table[width="715"] > tbody > tr,
+			table[width="725"] > tbody > tr,
+			table[width="715"] > tbody > tr > td,
+			table[width="725"] > tbody > tr > td,
+			table[width="710"]:not(:has(> tbody > tr > td[width="93%"])),
+			table[width="710"]:not(:has(> tbody > tr > td[width="93%"])) > tbody,
+			table[width="710"]:not(:has(> tbody > tr > td[width="93%"])) > tbody > tr,
+			table[width="710"]:not(:has(> tbody > tr > td[width="93%"])) > tbody > tr > td {
+				display: block;
+				width: auto !important;
 			}
-			@media (max-width: 600px) {
-				body {
-					margin: 4px;
-					overflow-wrap: break-word;
-					word-wrap: break-word;
-				}
-				table[width] {
-					width: 100% !important;
-					height: auto !important;
-				}
-				td[width],
-				th[width],
-				td[height],
-				th[height] {
-					width: auto !important;
-					height: auto !important;
-				}
-				td[bgcolor="#993300"] > h2,
-				td[bgcolor="#993300"] > h3 {
-					margin: 0.3em 0;
-				}
-				blockquote {
-					margin-left: 12px;
-					margin-right: 12px;
-				}
-				hr[width] {
-					width: 100% !important;
-				}
-				img,
-				iframe,
-				video,
-				embed,
-				object {
-					max-width: min(100%, calc(100vw - 16px)) !important;
-					height: auto;
-				}
-				pre {
-					max-width: min(100%, calc(100vw - 16px)) !important;
-					white-space: pre-wrap;
-					word-wrap: break-word;
-					overflow-wrap: break-word;
-				}
-				table[width="715"],
-				table[width="725"],
-				table[width="715"] > tbody,
-				table[width="725"] > tbody,
-				table[width="715"] > tbody > tr,
-				table[width="725"] > tbody > tr,
-				table[width="715"] > tbody > tr > td,
-				table[width="725"] > tbody > tr > td,
-				table[width="710"]:not(:has(> tbody > tr > td[width="93%"])),
-				table[width="710"]:not(:has(> tbody > tr > td[width="93%"])) > tbody,
-				table[width="710"]:not(:has(> tbody > tr > td[width="93%"])) > tbody > tr,
-				table[width="710"]:not(:has(> tbody > tr > td[width="93%"])) > tbody > tr > td {
-					display: block;
-					width: auto !important;
-				}
-				table[width="710"]:has(> tbody > tr > td[width="93%"]),
-				table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody {
-					display: block;
-					width: 100% !important;
-				}
-				table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr {
-					display: flex;
-					align-items: baseline;
-					gap: 0.4em;
-					margin: 0.4em 0;
-				}
-				table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr > td[width="3%"] {
-					display: none;
-				}
-				table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr > td[width="4%"] {
-					display: block;
-					flex: 0 0 auto;
-					width: auto !important;
-					padding: 0;
-				}
-				table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr > td[width="93%"] {
-					display: block;
-					flex: 1 1 auto;
-					width: auto !important;
-					padding: 0;
-				}
-				td[width="175"] > h4:not(:first-child):not(:has(img)),
-				td[width="160"] > h4:not(:first-child):not(:has(img)),
-				h4:has(> img[src*="PanelLine"]) {
-					display: none;
-				}
-				td[width="175"] > h3,
-				td[width="175"] > h4,
-				td[width="175"] > p,
-				td[width="160"] > h3,
-				td[width="160"] > h4,
-				td[width="160"] > p {
-					margin: 0.2em 0;
-				}
+			table[width="710"]:has(> tbody > tr > td[width="93%"]),
+			table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody {
+				display: block;
+				width: 100% !important;
 			}
+			table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr {
+				display: flex;
+				align-items: baseline;
+				gap: 0.4em;
+				margin: 0.4em 0;
+			}
+			table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr > td[width="3%"] {
+				display: none;
+			}
+			table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr > td[width="4%"] {
+				display: block;
+				flex: 0 0 auto;
+				width: auto !important;
+				padding: 0;
+			}
+			table[width="710"]:has(> tbody > tr > td[width="93%"]) > tbody > tr > td[width="93%"] {
+				display: block;
+				flex: 1 1 auto;
+				width: auto !important;
+				padding: 0;
+			}
+			td[width="175"] > h4:not(:first-child):not(:has(img)),
+			td[width="160"] > h4:not(:first-child):not(:has(img)),
+			h4:has(> img[src*="PanelLine"]) {
+				display: none;
+			}
+			td[width="175"] > h3,
+			td[width="175"] > h4,
+			td[width="175"] > p,
+			td[width="160"] > h3,
+			td[width="160"] > h4,
+			td[width="160"] > p {
+				margin: 0.2em 0;
+			}
+		}
 		</style>
 	</head>
-	<body
-		lang="EN-US"
-		style="tab-interval: 0.5in; background-color: white"
-	>
+	<body lang="EN-US" style="tab-interval: 0.5in; background-color: white">
 		<div>
 			<p class="MsoNormal" style="text-align: center">
 				<b style="mso-bidi-font-weight: normal"
@@ -1435,13 +154,10 @@
 						>William M. Klein</span
 					></b
 				><b style="mso-bidi-font-weight: normal"
-					><span style="font-size: 16pt; font-family: &quot;Arial Black&quot;; color: fuchsia"></span
-				></b>
+					><span style="font-size: 16pt; font-family: &quot;Arial Black&quot;; color: fuchsia"></span></b
+				>
 			</p>
-			<p class="MsoNormal">
-				Last-Modified:
-
-			</p>
+			<p class="MsoNormal">Last-Modified:</p>
 			<p class="MsoNormal" style="text-indent: 0.5in">
 				(For details of what changes have been made so far, please see
 				<a href="#App_Upd303"
@@ -1481,7 +197,6 @@
 				<a href="#Section4"
 					>4. Is there a free COBOL comp<span style="mso-bookmark: _Hlt461829002">i</span>ler?</a
 				>
-
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in"><a href="#Section41">4.1 for DOS, Windows or OS/2?</a></p>
 			<p class="MsoNormal" style="margin-left: 0.5in"><a href="#Section42">4.2 for Windows?</a></p>
@@ -1512,8 +227,7 @@
 				<a href="#com_ca"><span style="mso-spacerun: yes"></span>5.3 Computer Associates/Realia</a>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
-				<a href="#com_fujitsu">5.4 Fujit<span style="mso-bookmark: _Hlt461968202">s</span>u Software</a
-				>
+				<a href="#com_fujitsu">5.4 Fujit<span style="mso-bookmark: _Hlt461968202">s</span>u Software</a>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in; text-indent: 0.5in">
 				<span class="MsoHyperlink"><a href="#Fujitsu_Workstation">5.4.1 Fujitsu (WinTel)</a></span>
@@ -1527,7 +241,8 @@
 				<u
 					><span style="color: blue"
 						><a href="#Fujitsu_Siemens">5.4.3 FujitsuSiemens</a><span class="MsoHyperlink"></span></span
-				></u>
+					></u
+				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<a href="#IBM_products">5.5 IBM Corporati<span style="mso-bookmark: _Hlt461830098">o</span>n</a
@@ -1546,7 +261,6 @@
 						>s</span
 					></a
 				>
-
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in"><a href="#com_wang">5.10 Wang</a></p>
 			<p class="MsoNormal">
@@ -1560,7 +274,6 @@
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<a href="#Section62">6.6 Lia<span style="mso-bookmark: _Hlt453659361">n</span>t?</a>
-
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in"><a href="#where_merant">6.7 Micro Focus?</a></p>
 			<p class="MsoNormal" style="margin-left: 0.5in"><a href="#Section66">6.8 mbp ?</a></p>
@@ -1582,8 +295,7 @@
 			<p class="MsoNormal"><a href="#Section9">9. What about OO COBOL?</a></p>
 			<p class="MsoNormal" style="margin-left: 0.5in"><a href="#Section91">9.1 ANSI and ISO Work</a></p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
-				<a href="#Section92">9.2 Micro <span style="mso-bookmark: _Hlt461968506"></span>Focus</a
-				>
+				<a href="#Section92">9.2 Micro <span style="mso-bookmark: _Hlt461968506"></span>Focus</a>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<a href="#Section93"
@@ -1615,7 +327,8 @@
 							style="mso-bookmark: _Hlt451937387"
 							>i</span
 						>on</a
-					> &gt;</span
+					>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
@@ -1626,12 +339,14 @@
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<a href="#Books_21_days"
-					>10.22 Sams Teac<span style="mso-bookmark: _Hlt451885292">h</span> Yourself COBOL in 21 Days</a
+					>10.22 Sams Teac<span style="mso-bookmark: _Hlt451885292">h</span>
+					Yourself COBOL in 21 Days</a
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<span class="MsoHyperlink"
-					><a href="#books_24_hous">10.23 Sam's Teach Yourself COBOL in 24 Hours</a> &gt;</span
+					><a href="#books_24_hous">10.23 Sam's Teach Yourself COBOL in 24 Hours</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal"><a href="#Section11">11. Is there a COBOL to C converter?</a></p>
@@ -1680,7 +395,8 @@
 			</p>
 			<p class="MsoNormal" style="margin-left: 1in">
 				<span class="MsoHyperlink"
-					><a href="#Tools_PCYACC">13.5.7 <span style="mso-spacerun: yes"></span>PCYACC</a> &gt;</span
+					><a href="#Tools_PCYACC">13.5.7 <span style="mso-spacerun: yes"></span>PCYACC</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 1in"><a href="#Tools_Progeni">13.5.8 Progeni</a></p>
@@ -1700,13 +416,14 @@
 			<p class="MsoNormal" style="margin-left: 1in">
 				<a href="#tools_siber">13.5.12 Siber Systems</a>
 				<span class="MsoHyperlink"
-					><span style="color: windowtext; text-decoration: none; text-underline: none"></span
-				></span>
+					><span style="color: windowtext; text-decoration: none; text-underline: none"></span></span
+				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 1in"><a href="#Tools_Xinotech">13.5.13 Xinotech</a></p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<span class="MsoHyperlink"
-					><a href="#Tools_IBM_Debug">13.6 IBM Mainframe Debugging and Development Tools</a> &gt;</span
+					><a href="#Tools_IBM_Debug">13.6 IBM Mainframe Debugging and Development Tools</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 1in">
@@ -1720,7 +437,8 @@
 			</p>
 			<p class="MsoNormal" style="margin-left: 1in">
 				<span class="MsoHyperlink"
-					><a href="#Tools_IBM_Debug_Edge">13.6.4 Edge Portfolio Analyzer</a> &gt;</span
+					><a href="#Tools_IBM_Debug_Edge">13.6.4 Edge Portfolio Analyzer</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 1in">
@@ -1784,24 +502,27 @@
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in">
 				<span class="MsoHyperlink"
-					><a href="#Education_Trainer">20.2 Online and Trainer-led Courses and Tutorials</a> &gt;</span
+					><a href="#Education_Trainer">20.2 Online and Trainer-led Courses and Tutorials</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in; text-indent: 0.5in">
 				<span class="MsoHyperlink"
-					><a href="#Education_Trainers_friend">20.2.1 The Trainers Friend</a> &gt;</span
+					><a href="#Education_Trainers_friend">20.2.1 The Trainers Friend</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in; text-indent: 0.5in">
 				<span class="MsoHyperlink"
-					><a href="#Education_Limerick">20.2.2 University of Limerick Department of CSIS</a> &gt;</span
+					><a href="#Education_Limerick">20.2.2 University of Limerick Department of CSIS</a>
+					&gt;</span
 				>
 			</p>
 			<p class="MsoNormal" style="margin-left: 0.5in; text-indent: 0.5in">
 				<span class="MsoHyperlink"
 					><a href="#Education_S390">20.2.3 Schools offering IBM Mainframe Courses</a
-					><b style="mso-bidi-font-weight: normal"></b
-				></span>
+					><b style="mso-bidi-font-weight: normal"></b></span
+				>
 			</p>
 			<p class="MsoNormal">
 				<a href="#App_Samples"
@@ -1886,10 +607,7 @@
 
 			<p class="H3"><a id="Section1">1. Copying this FAQ.</a></p>
 			<span style="mso-bookmark: Section1"></span>
-			<p class="MsoNormal">
-				This FAQ is copyright 1994-
-				by William M. Klein.
-			</p>
+			<p class="MsoNormal">This FAQ is copyright 1994- by William M. Klein.</p>
 			<p class="MsoNormal">
 				It may be freely redistributed as long as it is completely unmodified and that no attempt is made to
 				restrict any recipient from redistributing it on the same terms. It may not be sold or incorporated into
@@ -1960,9 +678,10 @@
 				<span style="mso-spacerun: yes"></span>academic products for Windows 3.1 and later). It is possible that
 				you can find old copies of some of the other products via eBay or other online auctions of products.
 				<span style="mso-spacerun: yes"></span>However, licensing requirements
-				<b style="mso-bidi-font-weight: normal"><u>may</u></b> make acquisitions of such copies of questionable
-				validity or legality. <span style="mso-spacerun: yes"></span>Especially if you want to market your
-				compilers output, I strongly suggest that you contact the specific compiler vendor for legal issues.
+				<b style="mso-bidi-font-weight: normal"><u>may</u></b>
+				make acquisitions of such copies of questionable validity or legality.
+				<span style="mso-spacerun: yes"></span>Especially if you want to market your compilers output, I
+				strongly suggest that you contact the specific compiler vendor for legal issues.
 			</p>
 			<p class="MsoNormal">
 				IBM, Micro Focus, and LegacyJ all have had products for OS/2. <span style="mso-spacerun: yes"></span>It
@@ -2052,7 +771,8 @@
 			</p>
 			<p class="MsoNormal">
 				Also several books in the booklists come with a COBOL compiler. See
-				<a href="#Section10">section 10</a> for details.
+				<a href="#Section10">section 10</a>
+				for details.
 			</p>
 			<p class="MsoNormal">For some other possibilities, see:</p>
 			<p class="MsoNormal">
@@ -2088,7 +808,8 @@
 			<span style="mso-bookmark: Section42"></span>
 			<p class="MsoNormal">
 				<span style="mso-spacerun: yes"></span>For information on the getting the "not latest but free version"
-				of the Fujitsu compiler, see <span class="MsoHyperlink"
+				of the Fujitsu compiler, see
+				<span class="MsoHyperlink"
 					><a href="#free_fujitsu">5.3.2 FREE Fujitsu COBOL Version 3 Starter Set</a></span
 				><span style="font-size: 14pt; mso-bidi-font-size: 10pt"></span>
 			</p>
@@ -2180,10 +901,8 @@
 				<a href="http://www.acucorp.com/solutions/datasheets/acucobolgt/"
 					>ACUCOB<span style="mso-bookmark: _Hlt461828120"></span>O<span
 						style="mso-bookmark: _Hlt461828094"
-					></span
-					>L-GT</a
-				>.
-				Available for the Windows 95 and Windows NT operating systems, AcuBench contains a set of graphically
+					></span>L-GT</a
+				>. Available for the Windows 95 and Windows NT operating systems, AcuBench contains a set of graphically
 				based, GT-optimized development tools, including a Project Manager, WYSIWYG Screen Painter, and language
 				sensitive source Code Editor.
 			</p>
@@ -2319,15 +1038,15 @@
 			</p>
 			<p class="MsoNormal">
 				<span style="mso-bookmark: _Toc285359311"
-						>Fujitsu COBOL for Windows is a complete COBOL development environment that allows you to create
-						standalone COBOL applications and/or COBOL components for use with Microsoft visual tools.
-						Fujitsu COBOL for Windows Version 4 runs on Windows 95/98/NT.</span
-					>
+					>Fujitsu COBOL for Windows is a complete COBOL development environment that allows you to create
+					standalone COBOL applications and/or COBOL components for use with Microsoft visual tools. Fujitsu
+					COBOL for Windows Version 4 runs on Windows 95/98/NT.</span
+				>
 			</p>
 			<span style="mso-bookmark: _Toc285359311"></span><span style="mso-bookmark: _Toc411930806"></span>
 			<p class="H5">
-				<a id="free_fujitsu"></a
-				><span style="mso-bookmark: free_fujitsu"></span><a href="#free_fujitsu"
+				<a id="free_fujitsu"></a><span style="mso-bookmark: free_fujitsu"></span
+				><a href="#free_fujitsu"
 					><span style="mso-bookmark: _Hlt461829144"
 						><span style="mso-bookmark: free_fujitsu"
 							><span style="color: windowtext; text-decoration: none; text-underline: none"
@@ -2338,14 +1057,14 @@
 				><span style="mso-bookmark: _Hlt461829144"
 					><span style="mso-bookmark: free_fujitsu"
 						><span class="MsoHyperlink"
-							><span
-								style="color: windowtext; text-decoration: none; text-underline: none"
-							></span></span></span
-				></span>
+							><span style="color: windowtext; text-decoration: none; text-underline: none"></span></span
+						></span
+					></span
+				>
 			</p>
 			<span style="mso-bookmark: free_fujitsu"></span><span style="mso-bookmark: _Hlt461829144"></span>
 			<p class="H5">
-				 <span style="mso-tab-count: 1"></span>(See
+				<span style="mso-tab-count: 1"></span>(See
 				<span class="MsoHyperlink"
 					><a href="http://www.adtools.com/download/v3starter/index.htm"
 						>http://www.adtools.com/download/v3starter/index.htm</a
@@ -2414,8 +1133,9 @@
 			<p class="MsoNormal">
 				<span style="mso-tab-count: 1"></span>(See
 				<a href="http://www.adtools.com/products/windows/pgemplus.htm"
-					>http://www.adtools.com/products/windows/pgemplu<span style="mso-bookmark: Fujitsu_Siemens"></span
-					>s.htm</a
+					>http://www.adtools.com/products/windows/pgemplu<span
+						style="mso-bookmark: Fujitsu_Siemens"
+					></span>s.htm</a
 				><a id="Fujitsu_Siemens"></a>)
 			</p>
 			<p class="MsoNormal">
@@ -2433,9 +1153,9 @@
 				>)
 			</p>
 			<p class="MsoNormal">
-				Fujitsu COBOL for UNIX is a complete COBOL development suite -- compiler, run-time libraries, and
-					debug tool. The highly optimized code produced by Fujitsu COBOL provides the basis for fast,
-					mission-critical business systems on UNIX workstations.
+				Fujitsu COBOL for UNIX is a complete COBOL development suite -- compiler, run-time libraries, and debug
+				tool. The highly optimized code produced by Fujitsu COBOL provides the basis for fast, mission-critical
+				business systems on UNIX workstations.
 			</p>
 			<span style="mso-bookmark: _Toc411930808"></span>
 			<p class="H5">5.4.3 FujitsuSiemens</p>
@@ -2511,8 +1231,8 @@
 			<span style="mso-bookmark: LegacyJ_PERCobol"></span>
 			<p class="MsoNormal">
 				PERCobol is the modern advanced function COBOL compiler permitting the creation of
-				<i><u>Graphical</u>, <u>Object Oriented</u>, <u>Platform independent</u>, <u>Java enabled</u></i> COBOL
-				applications. Applications compiled with PERCobol can fully exploit new capabilities.
+				<i><u>Graphical</u>, <u>Object Oriented</u>, <u>Platform independent</u>, <u>Java enabled</u></i>
+				COBOL applications. Applications compiled with PERCobol can fully exploit new capabilities.
 			</p>
 			<p class="MsoNormal">
 				PERCobol compiler technology permits existing COBOL applications to make use of modern COBOL features
@@ -2543,7 +1263,10 @@
 				>
 			</p>
 			<p class="H5">
-				5.6.2 LegacyJ <a href="http://www.synkronix.com/bluej.html"><span style="mso-bidi-font-weight: bold">DDS Plug-in</span></a>
+				5.6.2 LegacyJ
+				<a href="http://www.synkronix.com/bluej.html"
+					><span style="mso-bidi-font-weight: bold">DDS Plug-in</span></a
+				>
 			</p>
 			<p class="MsoNormal">
 				<a id="com_RM"
@@ -2563,8 +1286,7 @@
 			<p class="MsoNormal">
 				<span style="mso-bookmark: com_RM"
 					>PERCobol in conjunction with DDS Plug-in maintains the same behavior as it did when solely resident
-					on the iSeries while enabling the COBOL application to access data remotely on the iSeries
-					server.</span
+					on the iSeries while enabling the COBOL application to access data remotely on the iSeries server.</span
 				>
 			</p>
 			<p class="MsoNormal"><span style="mso-bookmark: com_RM">For additional information, see:</span></p>
@@ -2609,10 +1331,7 @@
 				RM/Panels allows you to develop COBOL based applications with a whole new event-driven look-and-feel
 				with true GUI functionality, while maintaining complete object portability.
 			</p>
-			<p class="H5">
-				5.7.5 Relativity (at one time also known as Relational
-				Data Bridge)
-			</p>
+			<p class="H5">5.7.5 Relativity (at one time also known as Relational Data Bridge)</p>
 			<p class="MsoNormal">
 				This product allows you ODBC access to your COBOL data. You can update and insert records from ODBC.
 			</p>
@@ -2626,7 +1345,8 @@
 			</p>
 			<span style="mso-bookmark: Section51"></span>
 			<p class="H5">
-				5.8.1 Micro Focus Net Express<sup></sup> 3.1
+				5.8.1 Micro Focus Net Express<sup></sup>
+				3.1
 				<span
 					style="
 						font-size: 14pt;
@@ -3034,8 +1754,7 @@
 					MF or AC but I have comparisons of ReSource on modest RS/6000 boxes against a range of Wang VS
 					models and a couple of HP models. <span style="mso-spacerun: yes"></span>Wang's COBOL 85 generates
 					native assembler code, then assembles it and links it using the native tools, all automatically, on
-					all three platforms that support it -- the Wang VS line and COBOL ReSource on RS/6000 and
-					HP-9000.</span
+					all three platforms that support it -- the Wang VS line and COBOL ReSource on RS/6000 and HP-9000.</span
 				>
 			</p>
 			<p class="MsoNormal">
@@ -3077,8 +1796,8 @@
 				<span style="mso-bookmark: Where_can_I_contact"></span
 				><a href="#Section13"
 					><span style="mso-bookmark: Where_can_I_contact">13. COBOL Tools</span
-					><span style="mso-bookmark: Where_can_I_contact"></span
-				></a>
+					><span style="mso-bookmark: Where_can_I_contact"></span></a
+				>
 				<span style="mso-bookmark: Where_can_I_contact"><span style="mso-tab-count: 1"></span></span>
 			</p>
 			<span style="mso-bookmark: Where_can_I_contact"></span>
@@ -3139,7 +1858,8 @@
 						height="64"
 						src="https://web.archive.org/web/20070522181935im_/http://www.acucorp.com/images/logo.gif"
 						width="179"
-						alt="Acucorp logo"></span
+						alt="Acucorp logo"
+					></span
 				><a id="Section61"></a>6.1 Acucorp?
 			</p>
 			<div>
@@ -3163,8 +1883,7 @@
 				</p>
 				<p class="H4">
 					<a id="Section69"></a
-					><a id="WhereCA"
-						><span style="mso-bookmark: Section69">6.2 Computer Associates?</span></a
+					><a id="WhereCA"><span style="mso-bookmark: Section69">6.2 Computer Associates?</span></a
 					><span style="mso-bookmark: Section69"></span>
 				</p>
 				<p class="H5"><span style="mso-bookmark: Section69">6.2.1 For product inquiries</span></p>
@@ -3206,9 +1925,11 @@
 												height="82"
 												src="https://web.archive.org/web/20070522181935im_/http://www.ca.com/ssi/i/calogo.gif"
 												width="162"
-						alt="CA Technologies logo"
-						style="border: 0"></span
-									></span>
+												alt="CA Technologies logo"
+												style="border: 0"
+											></span
+										></span
+									>
 								</p>
 							</td>
 						</tr>
@@ -3253,8 +1974,8 @@
 							><span style="font-family: &quot;Courier New&quot;">http://ca.com/camap.htm</span></span
 						><span style="mso-bookmark: Section69"></span></a
 					><span style="mso-bookmark: Section69"
-						><span style="font-family: &quot;Courier New&quot;"></span
-					></span>
+						><span style="font-family: &quot;Courier New&quot;"></span></span
+					>
 				</p>
 				<p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
 					<span style="mso-bookmark: Section69">Email:</span>
@@ -3309,8 +2030,10 @@
 												height="70"
 												src="https://web.archive.org/web/20070522181935im_/http://www.adtools.com/shared/cobolbanner.jpg"
 												width="172"
-						alt="Adtools COBOL banner"
-						style="border: 0"></span>
+												alt="Adtools COBOL banner"
+												style="border: 0"
+											></span
+										>
 									</p>
 								</td>
 							</tr>
@@ -3384,8 +2107,8 @@
 									"
 								>
 									<span style="mso-bookmark: where_synkronix"
-										><span style="mso-bookmark: Section62"></span
-									></span>
+										><span style="mso-bookmark: Section62"></span></span
+									>
 								</p>
 								<p
 									class="MsoNormal"
@@ -3407,9 +2130,11 @@
 												height="59"
 												src="https://web.archive.org/web/20070522181935im_/http://www.legacyj.com/legacyj2.gif"
 												width="180"
-						alt="LegacyJ logo"
-						style="border: 0"></span
-									></span>
+												alt="LegacyJ logo"
+												style="border: 0"
+											></span
+										></span
+									>
 								</p>
 								<p
 									class="MsoNormal"
@@ -3425,8 +2150,8 @@
 									"
 								>
 									<span style="mso-bookmark: where_synkronix"
-										><span style="mso-bookmark: Section62"></span
-									></span>
+										><span style="mso-bookmark: Section62"></span></span
+									>
 								</p>
 							</td>
 						</tr>
@@ -3449,7 +2174,8 @@
 							><span
 								style="font-family: Arial; mso-bidi-font-family: &quot;Times New Roman&quot;"
 							></span></span
-					></span>
+						></span
+					>
 				</p>
 				<span style="mso-bookmark: where_synkronix"></span>
 				<p class="MsoNormal" style="margin-left: 0.5in; text-align: left">
@@ -3473,16 +2199,16 @@
 								font-family: &quot;Courier New&quot;;
 								mso-bidi-font-family: &quot;Times New Roman&quot;;
 							"
-						></span
-					></span>
+						></span></span
+					>
 				</p>
 				<p class="H4" style="text-align: left">
 					<span style="mso-bookmark: Section62">Web Site:</span>
 					<a href="http://www.legacyj.com/"
 						><span style="mso-bookmark: Section62"
 							><span style="font-weight: normal">http://www.legacyj.com</span></span
-						><span style="mso-bookmark: Section62"></span
-					></a>
+						><span style="mso-bookmark: Section62"></span></a
+					>
 					<span style="mso-bookmark: Section62"
 						><br>
 						Email:</span
@@ -3531,8 +2257,10 @@
 											height="62"
 											src="images/logo-sm.jpg"
 											width="210"
-						alt="Liant Software Corporation logo"
-						style="border: 0"></span>
+											alt="Liant Software Corporation logo"
+											style="border: 0"
+										></span
+									>
 								</p>
 							</td>
 						</tr>
@@ -3541,16 +2269,20 @@
 				<p class="Address" style="margin-top: 5pt; text-align: left">
 					Liant Software Corporation<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					Suite 4300<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					8911 Capital of Texas Highway North<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					Austin, TX <span style="mso-spacerun: yes"></span>78759<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					USA
 				</p>
 				<p
@@ -3567,7 +2299,8 @@
 					<span style="font-family: Courier">Tel: (512) 343-1010</span
 					><span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					<span style="font-family: Courier">Fax: (512) 343-9487</span>
 				</p>
 				<p class="MsoNormal">
@@ -3585,16 +2318,20 @@
 				>
 					Liant Software Ltd<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					2 Caxton Street<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					St. James Park<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					London SW1H 0QE<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					UK
 				</p>
 				<p class="MsoNormal" style="margin-left: 0.25in; text-align: left">
@@ -3612,15 +2349,18 @@
 				>
 					Nippon Liant Ltd<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					31-8, Takasecho
 					<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					Funabashi City,
 					<span
 						style="font-family: &quot;Courier New&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;"
-						><br></span>
+						><br></span
+					>
 					Chiba 273, Japan
 				</p>
 				<p class="MsoNormal" style="margin-left: 0.25in; text-align: left">
@@ -3677,8 +2417,10 @@
 												height="67"
 												src="https://web.archive.org/web/20070522181935im_/http://www.microfocus.com/images/template/logo.jpg"
 												width="157"
-						alt="Micro Focus logo"
-						style="border: 0"></span>
+												alt="Micro Focus logo"
+												style="border: 0"
+											></span
+										>
 									</p>
 								</td>
 							</tr>
@@ -3760,9 +2502,7 @@
 						>
 					</p>
 					<p class="H4">
-						<span style="mso-bookmark: Section68"
-							><a id="Where_RM">6.10 Ryan McFarland?</a></span
-						>
+						<span style="mso-bookmark: Section68"><a id="Where_RM">6.10 Ryan McFarland?</a></span>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section68"
@@ -3789,14 +2529,15 @@
 						<span style="mso-tab-count: 2"></span>Bob Ash: <span style="mso-spacerun: yes"></span>8-6232
 					</p>
 					<p class="MsoNormal">
-						Wang was bought up by Getronics in Europe (where Wang is still hot). The old Wang Web site
-						(<span style="layout-grid-mode: line"
+						Wang was bought up by Getronics in Europe (where Wang is still hot). The old Wang Web site (<span
+							style="layout-grid-mode: line"
 							><a href="http://www.wang.com/">http://www.wang.com</a>)</span
 						>
 						now links over to Getronics at:
 					</p>
 					<p class="MsoNormal" style="text-indent: 0.5in">
-						<a href="http://www.getronics.com/">http://www.getronics.com/</a> .
+						<a href="http://www.getronics.com/">http://www.getronics.com/</a>
+						.
 					</p>
 					<p class="MsoNormal">Wangs semi-official Web site is: <span style="mso-spacerun: yes"></span></p>
 					<p class="MsoNormal" style="text-indent: 0.5in">
@@ -3821,7 +2562,8 @@
 					<span style="mso-bookmark: Section72"></span>
 					<p class="MsoNormal">
 						The current Standards are not available for
-						<b style="mso-bidi-font-weight: normal"><u>FREE</u></b> via FTP.
+						<b style="mso-bidi-font-weight: normal"><u>FREE</u></b>
+						via FTP.
 					</p>
 					<p class="MsoNormal">However, they can be purchased (at least in the US) by going to:</p>
 					<p class="MsoNormal">
@@ -3842,7 +2584,8 @@
 						The status of the copyright versus the acknowledgement makes it uncertain whether once purchased
 						one may or may not distribute copies of the existing (or next) COBOL Standard.
 						<span style="mso-spacerun: yes"></span>Contact your
-						<b style="mso-bidi-font-weight: normal"><u>own</u></b> legal advisor for their opinion.
+						<b style="mso-bidi-font-weight: normal"><u>own</u></b>
+						legal advisor for their opinion.
 						<span
 							style="
 								font-family: &quot;Courier New&quot;;
@@ -3858,9 +2601,9 @@
 					</p>
 					<span style="mso-bookmark: Sec73"></span>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.5in">
-						<b style="mso-bidi-font-weight: normal"><u>NOTE</u></b
-						>: To see (or download) a copy of the latest draft of the next COBOL Standard, go to the J4
-						external web site and find a link to the latest and greatest version from there.
+						<b style="mso-bidi-font-weight: normal"><u>NOTE</u></b>: To see (or download) a copy of the
+						latest draft of the next COBOL Standard, go to the J4 external web site and find a link to the
+						latest and greatest version from there.
 						<span style="mso-spacerun: yes"></span>The external J4 web-site is at:
 					</p>
 					<p class="MsoNormal">
@@ -4110,9 +2853,7 @@
 					</p>
 					<p class="H3"><a id="Section9">9. What about OO COBOL?</a></p>
 					<p class="H4">
-						<span style="mso-bookmark: Section9"
-							><a id="Section91"></a>9.1 ANSI and ISO Work</span
-						>
+						<span style="mso-bookmark: Section9"><a id="Section91"></a>9.1 ANSI and ISO Work</span>
 					</p>
 					<p class="MsoNormal">
 						The draft of the Committee Draft (CD !&gt;!) of the next COBOL Standard which underwent public
@@ -4126,10 +2867,11 @@
 						currently being discussed, however -- the syntax is a subset of the current proposal with a few
 						variations. Multiple inheritance, conformance and garbage collection are not implemented. Also,
 						vocabularies are implemented though these are not currently part of the proposed standard.
-						<span style="mso-spacerun: yes"></span>(See <a href="#Section51"
+						<span style="mso-spacerun: yes"></span>(See
+						<a href="#Section51"
 							><span style="mso-bookmark: _Hlt461968457">Micro Focus'</span
-							><span style="mso-bookmark: _Hlt461968457"></span
-						></a>
+							><span style="mso-bookmark: _Hlt461968457"></span></a
+						>
 						<span style="mso-bookmark: _Hlt461968457"></span>product section.)
 					</p>
 					<p class="H4"><a id="Section93">9.3 IBM</a></p>
@@ -4137,13 +2879,15 @@
 						IBM offers OO COBOL products for MVS, OS/2, Windows, and AIX. (It does not currently offer it
 						for OS/400, VSE, or VM). There implementation is a subset of s snap-shot of the Standard as it
 						was in 1995. The latest mainframe compiler uses a Java-based OO model.. (See
-						<a href="#IBM_products">IBM's</a> product section.)
+						<a href="#IBM_products">IBM's</a>
+						product section.)
 					</p>
 					<p class="H5"><a id="OO_Fuj">9.4 Fujitsu</a></p>
 					<span style="mso-bookmark: OO_Fuj"></span>
 					<p class="MsoNormal">
 						Fujitsu's various COBOL products also support OO COBOL with or without GUI interfaces. (See
-						<a href="#com_fujitsu">Fujitsu's</a> product section.)
+						<a href="#com_fujitsu">Fujitsu's</a>
+						product section.)
 					</p>
 					<p class="H4"><a id="sec94">9.5 Others</a></p>
 					<span style="mso-bookmark: sec94"></span>
@@ -4155,8 +2899,7 @@
 					<p class="H3"><a id="Section10">10. Books about COBOL.</a></p>
 					<p class="H4">
 						<span style="mso-bookmark: Section10"
-							><a id="sect101"></a>10.1 Advanced ANSI COBOL with Structured Programming
-							(2nd ed.)</span
+							><a id="sect101"></a>10.1 Advanced ANSI COBOL with Structured Programming (2nd ed.)</span
 						>
 					</p>
 					<span style="mso-bookmark: Section10"></span>
@@ -4255,7 +2998,8 @@
 									font-family: &quot;Courier New&quot;;
 									mso-bidi-font-family: &quot;Times New Roman&quot;;
 								"
-								><span style="mso-tab-count: 1"></span></span></em
+								><span style="mso-tab-count: 1"></span></span
+							></em
 						><em
 							><b
 								><u
@@ -4280,8 +3024,8 @@
 									font-family: &quot;Courier New&quot;;
 									mso-bidi-font-family: &quot;Times New Roman&quot;;
 								"
-							></span
-						></em>
+							></span></em
+						>
 					</p>
 					<p class="MsoBodyText">
 						<span style="layout-grid-mode: line"
@@ -4328,9 +3072,7 @@
 						group, but he deserves the credit."
 					</p>
 					<p class="H4">
-						<a id="Books_os390"
-							>10.6 COBOL for OS/390 Power Programming with Complete Year 2000 Section</a
-						>
+						<a id="Books_os390">10.6 COBOL for OS/390 Power Programming with Complete Year 2000 Section</a>
 					</p>
 					<span style="mso-bookmark: Books_os390"></span>
 					<p class="MsoNormal">ISBN: 1892559021</p>
@@ -4483,10 +3225,10 @@
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.5in">
 						<span style="mso-bookmark: sect109"
-							><b><i>NOTE</i></b
-							>: If you get a copy of the first edition, you should be aware of a problem with the Fujitsu
-							compiler provided with the book. <span style="mso-spacerun: yes"></span>The following
-							correspondence came in from a person at Casegen,</span
+							><b><i>NOTE</i></b>: If you get a copy of the first edition, you should be aware of a
+							problem with the Fujitsu compiler provided with the book.
+							<span style="mso-spacerun: yes"></span>The following correspondence came in from a person at
+							Casegen,</span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -4507,8 +3249,8 @@
 						<span style="mso-bookmark: sect109"
 							>This problem is due to an error with the Fujitsu compiler on the CD.&nbsp; For some reason
 							the compiler does not get installed correctly and Casegen needs this compiler to build Cobol
-							programs generated by Casegen. <span style="mso-spacerun: yes"></span
-						></span>
+							programs generated by Casegen. <span style="mso-spacerun: yes"></span></span
+						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: sect109"
@@ -4662,9 +3404,7 @@
 					<p class="MsoNormal">Paperback (April 1990)</p>
 					<p class="MsoNormal">McGraw Hill College Div</p>
 					<p class="H4">
-						<a id="Books_21_days"
-							>10.22 Sams Teach Yourself COBOL in 21 Days, Third Edition</a
-						>
+						<a id="Books_21_days">10.22 Sams Teach Yourself COBOL in 21 Days, Third Edition</a>
 					</p>
 					<span style="mso-bookmark: Books_21_days"></span>
 					<p class="MsoNormal">ISBN: 0672317885</p>
@@ -4686,8 +3426,7 @@
 					<span style="mso-bookmark: books_24_hours"></span>
 					<p class="MsoNormal" style="margin-bottom: 0in; margin-bottom: 0.0001pt">
 						<span style="mso-bookmark: books_24_hous"
-							><b><i>NOTE</i></b
-							>: For just one place you can get this book, see:</span
+							><b><i>NOTE</i></b>: For just one place you can get this book, see:</span
 						>
 					</p>
 					<span style="mso-bookmark: books_24_hous"></span>
@@ -4944,8 +3683,8 @@
 					<p class="MsoNormal">ISBN: 0471330116</p>
 					<p class="MsoNormal">by Young M. Chae, Steven Glen Rogers</p>
 					<p class="MsoNormal">
-						<span style="mso-bidi-font-weight: bold">Paperback</span> - 287 pages; Book and CD Rom edition
-						(April 14, 1999)
+						<span style="mso-bidi-font-weight: bold">Paperback</span>
+						- 287 pages; Book and CD Rom edition (April 14, 1999)
 					</p>
 					<p class="MsoNormal">John Wiley &amp; Sons</p>
 					<p class="MsoNormal">
@@ -4954,11 +3693,11 @@
 					<p class="MsoNormal" style="margin-left: 0.5in">
 						This complete guide acquaints you with significant differences between major COBOL releases,
 						describes how to get the most out of the newest features, and boosts your upgrade effort with
-						techniques used by one of the largest Y2K factories in the world - Ernst &amp; Young's Accelerated
-						Conversion Center. You'll find step-by-step methods for comprehensive planning, converting,
-						compiling, and testing for each of the three different approaches to upgrading COBOL: manually,
-						using internal staff and resources; using purchased or leased conversion tools; and outsourcing
-						to an established upgrade factory.
+						techniques used by one of the largest Y2K factories in the world - Ernst &amp; Young's
+						Accelerated Conversion Center. You'll find step-by-step methods for comprehensive planning,
+						converting, compiling, and testing for each of the three different approaches to upgrading
+						COBOL: manually, using internal staff and resources; using purchased or leased conversion tools;
+						and outsourcing to an established upgrade factory.
 					</p>
 					<p class="H3"><a id="Section11">11. Is there a COBOL to C converter ?</a></p>
 					<span style="mso-bookmark: Section11"></span>
@@ -5046,7 +3785,8 @@
 					<p class="MsoNormal" style="text-indent: 0.5in"><span style="mso-tab-count: 1"></span>and</p>
 					<p class="MsoNormal" style="text-indent: 0.5in">
 						<span class="MsoHyperlink"
-							><a href="#tools_siber_transformer">13.5.12.1 CobolTransformer</a> &gt;</span
+							><a href="#tools_siber_transformer">13.5.12.1 CobolTransformer</a>
+							&gt;</span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -5104,8 +3844,7 @@
 								font-family: &quot;Courier New&quot;;
 								mso-bidi-font-family: &quot;Times New Roman&quot;;
 							"
-						></span
-						><span
+						></span><span
 							style="
 								font-family: &quot;Courier New&quot;;
 								mso-bidi-font-family: &quot;Times New Roman&quot;;
@@ -5200,11 +3939,11 @@
 						<span style="mso-bookmark: CA_telon"><span style="mso-bidi-font-weight: bold"></span></span
 						><span style="mso-bookmark: CA_telon"
 							><span style="font-weight: normal; mso-bidi-font-weight: bold"
-								><span style="mso-spacerun: yes"></span></span></span
+								><span style="mso-spacerun: yes"></span></span
+							></span
 						><span style="mso-bookmark: CA_telon"
 							><span style="mso-bidi-font-weight: bold"
-								>CA-Telon Application Generator and Advantage CA-Telon Application Generator PWS
-								Option</span
+								>CA-Telon Application Generator and Advantage CA-Telon Application Generator PWS Option</span
 							></span
 						>
 					</p>
@@ -5334,8 +4073,8 @@
 					<p class="MsoNormal">
 						<a id="GUI_PowerFORM"></a
 						><span style="mso-bookmark: GUI_PowerFORM"
-								><b style="mso-bidi-font-weight: normal">13.1.3 Fujitsu PowerFORM</b></span
-							><span style="mso-bookmark: GUI_PowerFORM"><b style="mso-bidi-font-weight: normal"></b></span>
+							><b style="mso-bidi-font-weight: normal">13.1.3 Fujitsu PowerFORM</b></span
+						><span style="mso-bookmark: GUI_PowerFORM"><b style="mso-bidi-font-weight: normal"></b></span>
 					</p>
 					<span style="mso-bookmark: GUI_PowerFORM"></span>
 					<p class="MsoNormal">
@@ -5419,9 +4158,9 @@
 						>
 						a graphical user interface for COBOL, is Norcom's newest and <i>coolest</i> product.&nbsp;
 						Powerful, rich in features, and remarkably easy to use.&nbsp; If you want to develop true
-						Windows<sup><span style="font-size: 7.5pt"></span></sup> applications using COBOL, you want
-						<b><i>GUI ScreenIO</i></b
-						>.
+						Windows<sup><span style="font-size: 7.5pt"></span></sup>
+						applications using COBOL, you want
+						<b><i>GUI ScreenIO</i></b>.
 					</p>
 					<p class="MsoNormal">For more information, see:</p>
 					<p class="MsoNormal">
@@ -5458,8 +4197,7 @@
 					<p class="H4">
 						<a id="tools_y200"></a><a id="Section1321"></a
 						><span style="mso-bookmark: tools_y200">!3.4 What about Year 2000 Tools?</span
-						><a id="Tools_Misc"></a><a id="tools_y200_ca"></a
-						><span style="mso-bookmark: Tools_Misc"></span>
+						><a id="Tools_Misc"></a><a id="tools_y200_ca"></a><span style="mso-bookmark: Tools_Misc"></span>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Tools_Misc"
@@ -5507,8 +4245,7 @@
 								<span style="mso-spacerun: yes"></span>An additional benefit is that often detection of
 								clones will show an incorrectly modified clone, thus demonstrating a bug.
 								<span style="mso-spacerun: yes"></span>Since the Clone Doctor is based on the DMS
-								Reengineering toolkit, it can handle massive application systems in multiple
-								languages.</span
+								Reengineering toolkit, it can handle massive application systems in multiple languages.</span
 							></span
 						>
 					</p>
@@ -5517,7 +4254,8 @@
 							><span style="mso-bookmark: Tools_COBOL_Explorer"
 								>A demo version for COBOL85 is available from their Web site at:
 								<span style="mso-spacerun: yes"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="H5" style="margin-left: 0.5in">
 						<span style="mso-bookmark: Tools_Misc"
@@ -5530,10 +4268,11 @@
 									></span
 								></span
 							><span style="mso-bookmark: Tools_Misc"
-								><span style="mso-bookmark: Tools_COBOL_Explorer"></span></span></a
+								><span style="mso-bookmark: Tools_COBOL_Explorer"></span></span
+							></a
 						><span style="mso-bookmark: Tools_Misc"
-							><span style="mso-bookmark: Tools_COBOL_Explorer"></span
-						></span>
+							><span style="mso-bookmark: Tools_COBOL_Explorer"></span></span
+						>
 					</p>
 					<p class="H5">
 						<span style="mso-bookmark: Tools_Misc"
@@ -5622,7 +4361,8 @@
 									></span
 								></span
 							><span style="mso-bookmark: Tools_Misc"
-								><span style="mso-bookmark: Tools_ETK"></span></span></a
+								><span style="mso-bookmark: Tools_ETK"></span></span
+							></a
 						><span style="mso-bookmark: Tools_Misc"><span style="mso-bookmark: Tools_ETK"></span></span>
 					</p>
 					<p class="H5">
@@ -5642,14 +4382,13 @@
 						><a href="http://home.comcast.net/~wmklein/FAQ/ETK/ETKPAK.HTM"
 							><span style="mso-bookmark: Tools_Misc"
 								>http://home.comcast.net/~wmklein/FAQ/ETK/ETKPAK.HTM</span
-							><span style="mso-bookmark: Tools_Misc"></span
-						></a>
+							><span style="mso-bookmark: Tools_Misc"></span></a
+						>
 						<span style="mso-bookmark: Tools_Misc"><span style="mso-spacerun: yes"></span></span>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Tools_Misc"
-							>To Download the most current version that I could find, get it (in zipped format)
-							from:</span
+							>To Download the most current version that I could find, get it (in zipped format) from:</span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -5657,8 +4396,8 @@
 						><a href="http://home.comcast.net/~wmklein/FAQ/ETK/ETKPAK.zip"
 							><span style="mso-bookmark: Tools_Misc"
 								>http://home.comcast.net/~wmklein/FAQ/ETK/ETKPAK.zip</span
-							><span style="mso-bookmark: Tools_Misc"></span
-						></a>
+							><span style="mso-bookmark: Tools_Misc"></span></a
+						>
 						<span style="mso-bookmark: Tools_Misc"></span>
 					</p>
 					<p class="MsoNormal">
@@ -5669,8 +4408,8 @@
 						><a href="http://richheimer.dyndns.org/Downloads/Docs/ETKPAK.ZIP"
 							><span style="mso-bookmark: Tools_Misc"
 								>http://richheimer.dyndns.org/Downloads/Docs/ETKPAK.ZIP</span
-							><span style="mso-bookmark: Tools_Misc"></span
-						></a>
+							><span style="mso-bookmark: Tools_Misc"></span></a
+						>
 						<span style="mso-bookmark: Tools_Misc"></span>
 					</p>
 					<p class="MsoNormal">
@@ -5723,8 +4462,8 @@
 						<span style="mso-bookmark: Tools_Misc"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.rxcomputer.com/"
 							><span style="mso-bookmark: Tools_Misc">http://www.rxcomputer.com</span
-							><span style="mso-bookmark: Tools_Misc"></span
-						></a>
+							><span style="mso-bookmark: Tools_Misc"></span></a
+						>
 						<span style="mso-bookmark: Tools_Misc"></span>
 					</p>
 					<span style="mso-bookmark: Tools_Misc"></span>
@@ -5753,21 +4492,22 @@
 						<span style="mso-fareast-font-family: &quot;Arial Unicode MS&quot;"></span>
 					</p>
 					<p class="MsoNormal">
-						<b>CPG, RPGII, and RPG III are proprietary, cryptic, and obsolete,</b> and require specialized
-						Runtime, APIs, licenses, and skills. RPG skills and tools are not as readily available when
-						urgent work needs to be done. While RPG/400 is not yet obsolete, it is cryptic and proprietary.
+						<b>CPG, RPGII, and RPG III are proprietary, cryptic, and obsolete,</b>
+						and require specialized Runtime, APIs, licenses, and skills. RPG skills and tools are not as
+						readily available when urgent work needs to be done. While RPG/400 is not yet obsolete, it is
+						cryptic and proprietary.
 					</p>
 					<p class="MsoNormal">
 						In contrast,
-						<b>COBOL is readable, self documenting, has better tools and more trained people</b> for its
-						maintenance. COBOL is the most common computer language, available on Mainframes, Minis, Unix,
-						and PC environments. COBOL is based on a public Standard, and is the most portable, and best
-						supported language in all of the above environments.
+						<b>COBOL is readable, self documenting, has better tools and more trained people</b>
+						for its maintenance. COBOL is the most common computer language, available on Mainframes, Minis,
+						Unix, and PC environments. COBOL is based on a public Standard, and is the most portable, and
+						best supported language in all of the above environments.
 					</p>
 					<p class="MsoNormal">For additional information contact:</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-align: left">
-						J &amp; C Migrations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; E-mail:
+						J &amp; C Migrations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; E-mail:
 						<a href="mailto:info@jcmigrations.com?Subject=Inquiry">info@jcmigrations.com</a><br>
 						566 Centre Street &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 						&nbsp; &nbsp; &nbsp; &nbsp; Tel: <em>+1 (617) 916-5114</em><br>
@@ -5775,9 +4515,7 @@
 					</p>
 					<p class="H5">
 						<a id="Tools_Progeni"></a
-						><a id="Tools_PCYACC"
-							><span style="mso-bookmark: Tools_Progeni">13.5.7 PCYACC</span></a
-						>
+						><a id="Tools_PCYACC"><span style="mso-bookmark: Tools_Progeni">13.5.7 PCYACC</span></a>
 					</p>
 					<span style="mso-bookmark: Tools_PCYACC"></span>
 					<p class="MsoNormal">
@@ -5807,8 +4545,10 @@
 							>
 							<span style="mso-bookmark: Tools_Progeni"></span></a
 						><span style="mso-bookmark: Tools_Progeni"
-							><span class="MsoHyperlink"><span style="font-size: 10pt; font-weight: normal"></span></span
-						></span>
+							><span class="MsoHyperlink"
+								><span style="font-size: 10pt; font-weight: normal"></span></span
+							></span
+						>
 					</p>
 					<p class="H5">
 						<span style="mso-bookmark: Tools_Progeni">13.5.8</span>
@@ -5862,7 +4602,8 @@
 						<span style="mso-bookmark: RainCode"
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"
-									><span style="mso-bidi-font-weight: bold">RainCode</span> products</span
+									><span style="mso-bidi-font-weight: bold">RainCode</span>
+									products</span
 								></span
 							></span
 						>
@@ -5880,7 +4621,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www.raincode.com/cobollg.html"
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"
@@ -5888,17 +4630,16 @@
 								></span
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section132"
-							><span style="mso-bookmark: tools_Refactive"></span
-						></span>
+							><span style="mso-bookmark: tools_Refactive"></span></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
-								><a id="RainCode_Engine"
-									>13.5.9.1 RainCode Engine for COBOL</a
-								></span
+								><a id="RainCode_Engine">13.5.9.1 RainCode Engine for COBOL</a></span
 							></span
 						>
 					</p>
@@ -5923,8 +4664,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
-								><span style="mso-tab-count: 1"></span
-								><a id="RainCode_Roadmap"></a></span></span
+								><span style="mso-tab-count: 1"></span><a id="RainCode_Roadmap"></a></span
+							></span
 						><a href="http://www.raincode.com/cobolengine.html"
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"
@@ -5934,11 +4675,14 @@
 								></span
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"
-									><span style="mso-bookmark: RainCode_Roadmap"></span></span></span></a
+									><span style="mso-bookmark: RainCode_Roadmap"></span></span
+								></span
+							></a
 						><span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
 								><span style="mso-bookmark: RainCode_Roadmap"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section132"
@@ -5963,7 +4707,8 @@
 								></span
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
 								><span style="mso-bidi-font-weight: bold">for COBOL is a</span></span
@@ -5976,7 +4721,8 @@
 								></span
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
 								><span style="mso-bidi-font-weight: bold"
@@ -5990,9 +4736,7 @@
 					<p class="H6">
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
-								><a id="RainCode_Checker"
-									>13.5.9.3 RainCode Checker for COBOL</a
-								></span
+								><a id="RainCode_Checker">13.5.9.3 RainCode Checker for COBOL</a></span
 							></span
 						>
 					</p>
@@ -6070,8 +4814,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
-								><span style="mso-tab-count: 1"></span
-								><a id="RainCode_XMLBooster"></a></span></span
+								><span style="mso-tab-count: 1"></span><a id="RainCode_XMLBooster"></a></span
+							></span
 						><a href="http://www.raincode.com/cobolchecker.html"
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"
@@ -6081,11 +4825,14 @@
 								></span
 							><span style="mso-bookmark: Section132"
 								><span style="mso-bookmark: tools_Refactive"
-									><span style="mso-bookmark: RainCode_XMLBooster"></span></span></span></a
+									><span style="mso-bookmark: RainCode_XMLBooster"></span></span
+								></span
+							></a
 						><span style="mso-bookmark: Section132"
 							><span style="mso-bookmark: tools_Refactive"
 								><span style="mso-bookmark: RainCode_XMLBooster"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section132"
@@ -6112,8 +4859,7 @@
 								><span style="mso-bookmark: tools_Refactive"
 									><span style="mso-bidi-font-weight: bold"
 										>Generates a parser (to convert an XML input to a valid COBOL data structure) as
-										well as an unparser (to convert the COBOL data structure back to an XML
-										stream).</span
+										well as an unparser (to convert the COBOL data structure back to an XML stream).</span
 									></span
 								></span
 							>
@@ -6218,16 +4964,15 @@
 					</p>
 					<p class="H5">
 						<a id="Tools_Xinotech"></a
-						><a id="tools_siber"
-							><span style="mso-bookmark: Tools_Xinotech">13.5.12 Siber Systems</span></a
-						>
+						><a id="tools_siber"><span style="mso-bookmark: Tools_Xinotech">13.5.12 Siber Systems</span></a>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: tools_siber"
 							><span style="mso-bookmark: Tools_Xinotech"
-								><span style="mso-bidi-font-weight: bold">Siber Systems</span> is a diverse software and
-								services company that specializes in program and data conversions, natural language
-								processing, and compilers. We offer these great products and services.</span
+								><span style="mso-bidi-font-weight: bold">Siber Systems</span>
+								is a diverse software and services company that specializes in program and data
+								conversions, natural language processing, and compilers. We offer these great products
+								and services.</span
 							></span
 						>
 					</p>
@@ -6242,16 +4987,16 @@
 							><span style="mso-bookmark: tools_siber"
 								><span style="mso-bookmark: Tools_Xinotech">http://www.siber.com/sct/</span></span
 							><span style="mso-bookmark: tools_siber"
-								><span style="mso-bookmark: Tools_Xinotech"></span></span></a
+								><span style="mso-bookmark: Tools_Xinotech"></span></span
+							></a
 						><span style="mso-bookmark: tools_siber"
-							><span style="mso-bookmark: Tools_Xinotech"></span
-						></span>
+							><span style="mso-bookmark: Tools_Xinotech"></span></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: tools_siber"
 							><span style="mso-bookmark: Tools_Xinotech"
-								><a id="tools_siber_transformer"></a>13.5.12.1
-								CobolTransformer</span
+								><a id="tools_siber_transformer"></a>13.5.12.1 CobolTransformer</span
 							></span
 						>
 					</p>
@@ -6410,8 +5155,7 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Tools_Xinotech"
 							>The Commercial version will allow to specify your own indentation/pretty-printing rules,
-							Program you style rules in CobolTransformer and make all programs to comply
-							automatically.</span
+							Program you style rules in CobolTransformer and make all programs to comply automatically.</span
 						>
 					</p>
 					<p class="MsoNormal"><span style="mso-bookmark: Tools_Xinotech">To be available soon.</span></p>
@@ -6489,15 +5233,15 @@
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								>Computer Associates offers a variety of COBOL and COBOL-related products (for a variety
 								of operating systems include OS/390, VSE, WinTel).
-								<span style="mso-spacerun: yes"></span>For an entry into the world of CA products,
-								see:</span
+								<span style="mso-spacerun: yes"></span>For an entry into the world of CA products, see:</span
 							></span
 						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www.cai.com/products/"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"
@@ -6505,10 +5249,11 @@
 								></span
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section14"
-							><span style="mso-bookmark: Tools_IBM_Debug_CA"></span
-						></span>
+							><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: Section14"
@@ -6527,7 +5272,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www3.ca.com/Solutions/Product.asp?ID=259"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"
@@ -6535,10 +5281,11 @@
 								></span
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section14"
-							><span style="mso-bookmark: Tools_IBM_Debug_CA"></span
-						></span>
+							><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: Section14"
@@ -6557,17 +5304,21 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
-								><span style="color: black"><span style="mso-tab-count: 1"></span></span></span></span
+								><span style="color: black"><span style="mso-tab-count: 1"></span></span></span
+							></span
 						><a href="http://ca.com/products/intertest_batch.htm"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"
 									>http://ca.com/products/intertest_batch.htm</span
 								></span
 							><span style="mso-bookmark: Section14"
-								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span></a
+								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
+							></a
 						><span style="mso-bookmark: Section14"
-							><span style="mso-bookmark: Tools_IBM_Debug_CA"><span style="color: black"></span></span
-						></span>
+							><span style="mso-bookmark: Tools_IBM_Debug_CA"
+								><span style="color: black"></span></span
+							></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: Section14"
@@ -6585,7 +5336,9 @@
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								><span style="mso-bidi-font-weight: bold"
-									><span style="mso-tab-count: 1"></span></span></span></span
+									><span style="mso-tab-count: 1"></span></span
+								></span
+							></span
 						><a href="http://ca.com/products/intertest.htm"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"
@@ -6594,11 +5347,13 @@
 									></span
 								></span
 							><span style="mso-bookmark: Section14"
-								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span></a
+								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
+							></a
 						><span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								><span style="mso-bidi-font-weight: bold"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: Section14"
@@ -6616,7 +5371,9 @@
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								><span style="mso-bidi-font-weight: bold"
-									><span style="mso-tab-count: 1"></span></span></span></span
+									><span style="mso-tab-count: 1"></span></span
+								></span
+							></span
 						><a href="http://ca.com/products/migrate_cobol.htm"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"
@@ -6626,11 +5383,13 @@
 								></span
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								><span style="mso-bidi-font-weight: bold"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="H6">
 						<span style="mso-bookmark: Section14"
@@ -6648,7 +5407,9 @@
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								><span style="mso-bidi-font-weight: bold"
-									><span style="mso-tab-count: 1"></span></span></span></span
+									><span style="mso-tab-count: 1"></span></span
+								></span
+							></span
 						><a href="http://www3.ca.com/Solutions/Collateral.asp?ID=808&amp;PID=1628"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_CA"
@@ -6657,18 +5418,18 @@
 									></span
 								></span
 							><span style="mso-bookmark: Section14"
-								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span></a
+								><span style="mso-bookmark: Tools_IBM_Debug_CA"></span></span
+							></a
 						><span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_CA"
 								><span style="mso-bidi-font-weight: bold"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<span style="mso-bookmark: Tools_IBM_Debug_CA"></span>
 					<p class="H5">
 						<span style="mso-bookmark: Section14"
-							><a id="Tools_IBM_Debug_Compuware"
-								>13.6.2 Compuware</a
-							></span
+							><a id="Tools_IBM_Debug_Compuware">13.6.2 Compuware</a></span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -6695,11 +5456,13 @@
 								><span style="mso-bookmark: Section14"
 									><span style="mso-bookmark: Tools_IBM_Debug_Compuware">Developing</span></span
 								><span style="mso-bookmark: Section14"
-									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span></a
+									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span
+								></a
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_Compuware"
 									><span class="MsoHyperlink"></span></span
-							></span>
+								></span
+							>
 						</li>
 						<li
 							class="MsoNormal"
@@ -6718,11 +5481,13 @@
 								><span style="mso-bookmark: Section14"
 									><span style="mso-bookmark: Tools_IBM_Debug_Compuware">Testing</span></span
 								><span style="mso-bookmark: Section14"
-									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span></a
+									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span
+								></a
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_Compuware"
 									><span class="MsoHyperlink"></span></span
-							></span>
+								></span
+							>
 						</li>
 						<li
 							class="MsoNormal"
@@ -6741,11 +5506,13 @@
 								><span style="mso-bookmark: Section14"
 									><span style="mso-bookmark: Tools_IBM_Debug_Compuware">Implementing</span></span
 								><span style="mso-bookmark: Section14"
-									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span></a
+									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span
+								></a
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_Compuware"
 									><span class="MsoHyperlink"></span></span
-							></span>
+								></span
+							>
 						</li>
 						<li
 							class="MsoNormal"
@@ -6764,11 +5531,13 @@
 								><span style="mso-bookmark: Section14"
 									><span style="mso-bookmark: Tools_IBM_Debug_Compuware">Managing</span></span
 								><span style="mso-bookmark: Section14"
-									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span></a
+									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span
+								></a
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_Compuware"
 									><span class="MsoHyperlink"></span></span
-							></span>
+								></span
+							>
 						</li>
 						<li
 							class="MsoNormal"
@@ -6780,11 +5549,13 @@
 								><span style="mso-bookmark: Section14"
 									><span style="mso-bookmark: Tools_IBM_Debug_Compuware">Staffing</span></span
 								><span style="mso-bookmark: Section14"
-									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span></a
+									><span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span></span
+								></a
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_Compuware"
 									><span class="MsoHyperlink"></span></span
-							></span>
+								></span
+							>
 						</li>
 					</ul>
 					<span style="mso-bookmark: Tools_IBM_Debug_Compuware"></span>
@@ -6813,7 +5584,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bidi-font-family: Arial"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www.compuware.com/products/abendaid/"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bidi-font-family: Arial"
@@ -6831,7 +5603,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bidi-font-family: Arial"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www.compuware.com/products/fileaid/"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bidi-font-family: Arial"
@@ -6854,7 +5627,8 @@
 								></span
 							><span class="strobe1"
 								><span style="mso-ansi-font-size: 10pt; mso-bidi-font-size: 10pt"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
@@ -6865,8 +5639,8 @@
 						<span style="mso-bookmark: Section14"></span
 						><a href="http://www.compuware.com/products/strobe/mvs/"
 							><span style="mso-bookmark: Section14">http://www.compuware.com/products/strobe/mvs/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"><span class="MsoHyperlink"></span></span>
 					</p>
 					<p class="H6">
@@ -6883,7 +5657,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bidi-font-family: Arial"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www.compuware.com/products/xpediter/"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bidi-font-family: Arial"
@@ -6906,16 +5681,16 @@
 							>
 							insuring the integrity of the software that runs your business. Their software products,
 							services and technical support provide for high-quality, cost-effective solutions for
-							today's critical MVS application systems and back-end operations. <b></b
-						></span>
+							today's critical MVS application systems and back-end operations. <b></b></span
+						>
 					</p>
 					<p class="MsoNormal"><span style="mso-bookmark: Section14">See:</span></p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.cue-metamon.com/"
 							><span style="mso-bookmark: Section14">http://www.cue-metamon.com/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6"><span style="mso-bookmark: Section14">13.6.3.1 METAMON</span></p>
@@ -6924,8 +5699,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.cue-metamon.com/"
 							><span style="mso-bookmark: Section14">http://www.cue-metamon.com/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="MsoNormal">
@@ -6952,7 +5727,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
 							><span style="mso-bookmark: Tools_IBM_Debug_IBM"
-								><span style="mso-tab-count: 1"></span></span></span
+								><span style="mso-tab-count: 1"></span></span
+							></span
 						><a href="http://www.edge-information.com/"
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_IBM"
@@ -6960,10 +5736,11 @@
 								></span
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Tools_IBM_Debug_IBM"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: Section14"
-							><span style="mso-bookmark: Tools_IBM_Debug_IBM"></span
-						></span>
+							><span style="mso-bookmark: Tools_IBM_Debug_IBM"></span></span
+						>
 					</p>
 					<p class="H5">
 						<span style="mso-bookmark: Section14"
@@ -6993,8 +5770,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www-4.ibm.com/software/ad/filemanager/"
 							><span style="mso-bookmark: Section14">http://www-4.ibm.com/software/ad/filemanager/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6">
@@ -7014,8 +5791,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www-3.ibm.com/software/ad/ispf/"
 							><span style="mso-bookmark: Section14">http://www-3.ibm.com/software/ad/ispf/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6"><span style="mso-bookmark: Section14">13.6.5.5 IBM SCLM for z/OS</span></p>
@@ -7025,14 +5802,12 @@
 						><a href="http://www-3.ibm.com/software/ad/sclmsuite/sclm/"
 							><span style="mso-bookmark: Section14"
 								>http://www-3.ibm.com/software/ad/sclmsuite/sclm/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H5">
-						<span style="mso-bookmark: Section14"
-							><a id="Tools_IBM_Debug_Macro4">13.6.6 Macro 4</a></span
-						>
+						<span style="mso-bookmark: Section14"><a id="Tools_IBM_Debug_Macro4">13.6.6 Macro 4</a></span>
 					</p>
 					<span style="mso-bookmark: Tools_IBM_Debug_Macro4"></span>
 					<p class="MsoNormal">
@@ -7047,8 +5822,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.macro4.com/solutions/index.html"
 							><span style="mso-bookmark: Section14">http://www.macro4.com/solutions/index.html</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6"><span style="mso-bookmark: Section14">13.6.6.1 DUMPMASTER</span></p>
@@ -7058,8 +5833,8 @@
 						><a href="http://www.macro4.com/solutions/products/dumpmaster/index.html"
 							><span style="mso-bookmark: Section14"
 								>http://www.macro4.com/solutions/products/dumpmaster/index.html</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6"><span style="mso-bookmark: Section14">13.6.6.2 INSYNC</span></p>
@@ -7069,8 +5844,8 @@
 						><a href="http://www.macro4.com/solutions/products/insync/"
 							><span style="mso-bookmark: Section14"
 								>http://www.macro4.com/solutions/products/insync/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6"><span style="mso-bookmark: Section14">13.6.6.3 TRACEMASTER</span></p>
@@ -7080,14 +5855,12 @@
 						><a href="http://www.macro4.com/solutions/products/tracemaster/"
 							><span style="mso-bookmark: Section14"
 								>http://www.macro4.com/solutions/products/tracemaster/</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H5">
-						<span style="mso-bookmark: Section14"
-							><a id="Tools_IBM_Debug_Serena">13.6.7 Serena</a></span
-						>
+						<span style="mso-bookmark: Section14"><a id="Tools_IBM_Debug_Serena">13.6.7 Serena</a></span>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Section14"
@@ -7104,8 +5877,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.serena.com/home/index.html"
 							><span style="mso-bookmark: Section14">http://www.serena.com/home/index.html</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6">
@@ -7132,8 +5905,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.serena.com/product/aa_st_atd_ov.html"
 							><span style="mso-bookmark: Section14">http://www.serena.com/product/aa_st_atd_ov.html</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6">
@@ -7182,8 +5955,8 @@
 						><a href="http://www.serena.com/product/aa_comparex_ov.html"
 							><span style="mso-bookmark: Section14"
 								>http://www.serena.com/product/aa_comparex_ov.html</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<p class="H6">
@@ -7199,8 +5972,8 @@
 						<span style="mso-bookmark: Section14"><span style="mso-tab-count: 1"></span></span
 						><a href="http://www.spc-systems.com/"
 							><span style="mso-bookmark: Section14">http://www.spc-systems.com</span
-							><span style="mso-bookmark: Section14"></span
-						></a>
+							><span style="mso-bookmark: Section14"></span></a
+						>
 						<span style="mso-bookmark: Section14"></span>
 					</p>
 					<h3>
@@ -7228,7 +6001,8 @@
 										mso-bidi-font-family: &quot;Times New Roman&quot;;
 									"
 								></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="MsoNormal" style="text-indent: 0.5in">
 						<span style="mso-bookmark: Section14"><span style="mso-bookmark: Other_sources"></span></span
@@ -7236,10 +6010,11 @@
 							><span style="mso-bookmark: Section14"
 								><span style="mso-bookmark: Other_sources">http://www.Acucorp.com/</span></span
 							><span style="mso-bookmark: Section14"
-								><span style="mso-bookmark: Other_sources"></span></span></a
+								><span style="mso-bookmark: Other_sources"></span></span
+							></a
 						><span style="mso-bookmark: Section14"
-							><span style="mso-bookmark: Other_sources"><span class="MsoHyperlink"></span></span
-						></span>
+							><span style="mso-bookmark: Other_sources"><span class="MsoHyperlink"></span></span></span
+						>
 					</p>
 					<span style="mso-bookmark: Other_sources"></span><span style="mso-bookmark: Section14"></span>
 					<p class="H4">
@@ -7248,8 +6023,8 @@
 					</p>
 					<span style="mso-bookmark: Section142"></span>
 					<p class="MsoNormal">
-						There is (or at least <i style="mso-bidi-font-style: normal"><u>WAS</u></i
-						>) a COBOL forum on Bix. Don Nelson is the moderator.
+						There is (or at least <i style="mso-bidi-font-style: normal"><u>WAS</u></i>) a COBOL forum on
+						Bix. Don Nelson is the moderator.
 					</p>
 					<p class="H4">14.3 CA WWW server</p>
 					<p class="MsoNormal">CA also has a WWW server. It's URL is</p>
@@ -7334,8 +6109,7 @@
 							>Contains all sorts of information, including a copy of the</span
 						>
 						<span style="mso-bookmark: Section149"
-							><span style="font-size: 14pt; mso-bidi-font-size: 10pt"></span>COBOL 650 compiler. It's
-							at</span
+							><span style="font-size: 14pt; mso-bidi-font-size: 10pt"></span>COBOL 650 compiler. It's at</span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -7381,8 +6155,8 @@
 					<p class="MsoNormal" style="text-indent: 0.5in">
 						<span class="MsoHyperlink"
 							><a href="http://www.microfocus.com/">http://www.microfocus.com/</a>
-							<a id="Section145"></a
-						></span>
+							<a id="Section145"></a></span
+						>
 					</p>
 					<span style="mso-bookmark: Section145"></span>
 					<p class="H3"><a id="Section15">15. Information required for the FAQ.</a></p>
@@ -7564,9 +6338,8 @@
 						Yes, you can get help with your homework via these newsgroups. HOWEVER, that does mean that you
 						will receive help - you will <b style="mso-bidi-font-weight: normal"><u>NOT</u></b> find many
 						participants who will be very happy if you ask them to
-						<b style="mso-bidi-font-weight: normal"><u>do your homework FOR YOU</u></b
-						>. Some hints that you should consider when drafting your post for assistance with homework
-						include:
+						<b style="mso-bidi-font-weight: normal"><u>do your homework FOR YOU</u></b>. Some hints that you
+						should consider when drafting your post for assistance with homework include:
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span style="font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"
@@ -7695,7 +6468,8 @@
 						<a href="http://www.justcoboljobs.com/">http://www.justcoboljobs.com/</a>
 					</p>
 					<p class="H3" style="text-align: left">
-						<a id="Usages"></a><span style="mso-bookmark: Usages"
+						<a id="Usages"></a
+						><span style="mso-bookmark: Usages"
 							>19. What about USAGE? COMP? Storage for data in xyz format? Etc</span
 						>
 					</p>
@@ -7936,9 +6710,9 @@
 						totally implementor defined. There is a common MISCONCEPTION that the Standard requires USAGE
 						COMP to be the "most efficient" USAGE for numeric fields (I have even seen this quoted in some
 						manuals). However, this requirement certainly does
-						<b style="mso-bidi-font-weight: normal"><u>NOT</u></b> exist in the current ANSI/ISO Standard.
-						Nevertheless, often (but definitely NOT always) this USAGE is the most efficient for numeric
-						fields used in frequent arithmetic operations.
+						<b style="mso-bidi-font-weight: normal"><u>NOT</u></b>
+						exist in the current ANSI/ISO Standard. Nevertheless, often (but definitely NOT always) this
+						USAGE is the most efficient for numeric fields used in frequent arithmetic operations.
 					</p>
 					<p class="MsoNormal">Some common meanings of USAGE COMP include:</p>
 					<p
@@ -8217,9 +6991,9 @@
 						without them you will usually get a "rather pointed" reply.
 					</p>
 					<p class="MsoNormal">
-						P.S. Never, <b style="mso-bidi-font-weight: normal"><u>NEVER</u></b
-						>, use a "REDEFINES" where you change the USAGE of a field - and expect the application to be
-						portable from operating system to operating system - much less from compiler to compiler!
+						P.S. Never, <b style="mso-bidi-font-weight: normal"><u>NEVER</u></b>, use a "REDEFINES" where
+						you change the USAGE of a field - and expect the application to be portable from operating
+						system to operating system - much less from compiler to compiler!
 					</p>
 					<p class="H3">
 						<a id="Education"
@@ -8228,9 +7002,7 @@
 					</p>
 					<span style="mso-bookmark: Education"></span>
 					<p class="H4">
-						<a id="Education_teaching_yourself"
-							>20.1 Some places to start for teaching yourself COBOL</a
-						>
+						<a id="Education_teaching_yourself">20.1 Some places to start for teaching yourself COBOL</a>
 					</p>
 					<span style="mso-bookmark: Education_teaching_yourself"></span>
 					<p class="MsoNormal">
@@ -8240,7 +7012,8 @@
 					</p>
 					<p class="MsoNormal" style="text-indent: 0.5in">
 						<span class="MsoHyperlink"
-							><a href="#books_24_hours">Sam's Teach Yourself COBOL in 24 Hours</a> &gt;</span
+							><a href="#books_24_hours">Sam's Teach Yourself COBOL in 24 Hours</a>
+							&gt;</span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -8256,7 +7029,8 @@
 					<ul style="margin-top: 0in">
 						<li class="MsoNormal" style="color: blue; mso-list: l10 level1 lfo22; tab-stops: list 0.5in">
 							<span class="MsoHyperlink"
-								><a href="#MF_Academic">Micro Focus Academic Products</a> &gt;</span
+								><a href="#MF_Academic">Micro Focus Academic Products</a>
+								&gt;</span
 							>
 						</li>
 						<li class="MsoNormal" style="mso-list: l10 level1 lfo22; tab-stops: list 0.5in">
@@ -8266,15 +7040,11 @@
 						</li>
 					</ul>
 					<p class="H4">
-						<a id="Education_Trainer"
-							>20.2 Online and Trainer-led Courses and Tutorials</a
-						>
+						<a id="Education_Trainer">20.2 Online and Trainer-led Courses and Tutorials</a>
 					</p>
 					<p class="H5">
 						<span style="mso-bookmark: Education_Trainer"
-							><a id="Education_Trainers_friend"
-								>20.2.1 The Trainers Friend</a
-							></span
+							><a id="Education_Trainers_friend">20.2.1 The Trainers Friend</a></span
 						>
 					</p>
 					<span style="mso-bookmark: Education_Trainers_friend"></span
@@ -8306,22 +7076,19 @@
 					</p>
 					<span style="mso-bookmark: Education_Limerick"></span>
 					<p class="MsoNormal">
-						The University of Limerick, Department of CSIS provides a<a
-							id="App_Samples"
-						></a>
+						The University of Limerick, Department of CSIS provides a<a id="App_Samples"></a>
 						<span style="mso-bookmark: App_Samples"
-								><span style="color: black"
-									>site that contains COBOL lecture notes, COBOL Programming Exercises with sample
-									solutions, a large number of example COBOL programs, tutorials on the COBOL Report
-									Writer and a comprehensive set of COBOL tutorials making a full COBOL course.</span
-								></span
-							>
+							><span style="color: black"
+								>site that contains COBOL lecture notes, COBOL Programming Exercises with sample
+								solutions, a large number of example COBOL programs, tutorials on the COBOL Report
+								Writer and a comprehensive set of COBOL tutorials making a full COBOL course.</span
+							></span
+						>
 						<span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"
 								><span style="font-size: 12pt; color: black"></span
 								><span style="color: black"
-									>It supports the COBOL programming modules taught at the University of
-									Limerick</span
+									>It supports the COBOL programming modules taught at the University of Limerick</span
 								></span
 							></span
 						>
@@ -8334,7 +7101,8 @@
 					<p class="MsoNormal">
 						<span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"
-								><span style="color: black"><span style="mso-tab-count: 1"></span></span></span></span
+								><span style="color: black"><span style="mso-tab-count: 1"></span></span></span
+							></span
 						><a href="https://bushidocodes.github.io/limerick-cobol/"
 							><span style="mso-bookmark: _Hlt462027987"
 								><span style="mso-bookmark: App_Samples"
@@ -8342,21 +7110,22 @@
 								></span
 							><span style="mso-bookmark: _Hlt462027987"
 								><span style="mso-bookmark: App_Samples"></span></span
-						></a>
+							></a
+						>
 						<span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"><span style="color: black"></span></span></span
 						><span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"
 								><span style="font-size: 12pt; color: black"
-									><span style="mso-spacerun: yes"></span></span></span
-						></span>
+									><span style="mso-spacerun: yes"></span></span
+								></span
+							></span
+						>
 					</p>
 					<p class="H5">
 						<span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"
-								><a id="Education_S390"
-									>20.2.3 Schools Offering IBM Mainframe Courses</a
-								></span
+								><a id="Education_S390">20.2.3 Schools Offering IBM Mainframe Courses</a></span
 							></span
 						>
 					</p>
@@ -8375,10 +7144,11 @@
 									>http://www.mainframes.com/schools.htm</span
 								></span
 							><span style="mso-bookmark: _Hlt462027987"
-								><span style="mso-bookmark: App_Samples"></span></span></a
+								><span style="mso-bookmark: App_Samples"></span></span
+							></a
 						><span style="mso-bookmark: _Hlt462027987"
-							><span style="mso-bookmark: App_Samples"></span
-						></span>
+							><span style="mso-bookmark: App_Samples"></span></span
+						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: _Hlt462027987"
@@ -8389,13 +7159,13 @@
 						><span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"
 								><span style="font-size: 12pt; color: black"></span></span
-						></span>
+							></span
+						>
 					</p>
 					<p class="H3">
 						<span style="mso-bookmark: _Hlt462027987"
 							><span style="mso-bookmark: App_Samples"
-								>Appendix A -
-								Samples and Examples of COBOL Coding techniques</span
+								>Appendix A - Samples and Examples of COBOL Coding techniques</span
 							></span
 						>
 					</p>
@@ -8417,10 +7187,11 @@
 									>http://www.infogoal.com/cbd/cbdprj.htm</span
 								></span
 							><span style="mso-bookmark: Sample_date"
-								><span style="mso-bookmark: Sample_4digit"></span></span></a
+								><span style="mso-bookmark: Sample_4digit"></span></span
+							></a
 						><span style="mso-bookmark: Sample_date"
-							><span style="mso-bookmark: Sample_4digit"></span
-						></span>
+							><span style="mso-bookmark: Sample_4digit"></span></span
+						>
 					</p>
 					<p class="MsoNormal">
 						<span style="mso-bookmark: Sample_date"><span style="mso-bookmark: Sample_4digit"></span></span>
@@ -8452,10 +7223,8 @@
 							><span style="font-family: Courier"
 								>01 <span style="mso-spacerun: yes"></span>Current-4-Digit-Year-Date.<br>
 								&nbsp;&nbsp;&nbsp;&nbsp;05&nbsp;&nbsp;YYYY&nbsp;&nbsp;&nbsp;&nbsp;Pic 9(04).<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;05&nbsp;&nbsp;MM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pic
-								9(02).<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;05&nbsp;&nbsp;DD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pic
-								9(02).<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;05&nbsp;&nbsp;MM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pic 9(02).<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;05&nbsp;&nbsp;DD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pic 9(02).<br>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;***</span
 							></span
 						>
@@ -8473,8 +7242,7 @@
 					>
 						<span style="mso-bookmark: Sample_date"
 							><span style="font-family: Courier"
-								>&nbsp;&nbsp;&nbsp;&nbsp;Move Function Current-Date (1:8) to
-								Current-4-Digit-Year-Date.</span
+								>&nbsp;&nbsp;&nbsp;&nbsp;Move Function Current-Date (1:8) to Current-4-Digit-Year-Date.</span
 							></span
 						>
 					</p>
@@ -8559,8 +7327,7 @@
 						<span style="mso-bookmark: Sample_date"
 							><span style="font-family: Courier"
 								>&nbsp;&nbsp;&nbsp;&nbsp;Compute Current-Num-Jul-Date = Function Day-of-Integer<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Function Integer-of-Date
-								(Current-Num-Greg-Date)).<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Function Integer-of-Date (Current-Num-Greg-Date)).<br>
 								&nbsp;&nbsp;&nbsp;&nbsp;End-Compute.</span
 							></span
 						>
@@ -8586,8 +7353,7 @@
 					>
 						<span style="mso-bookmark: Sample_date"
 							><span style="font-family: Courier"
-								><span style="mso-spacerun: yes"></span>Accept Current-Num-Jul-Date from Day
-								YYYYDDD</span
+								><span style="mso-spacerun: yes"></span>Accept Current-Num-Jul-Date from Day YYYYDDD</span
 							></span
 						>
 					</p>
@@ -8615,8 +7381,7 @@
 						<span style="mso-bookmark: Sample_date"
 							><b style="mso-bidi-font-weight: normal">NOTE WELL</b>: Some code is omitted and some code
 							could be combined, re-ordered, or modified for "performance" reasons. This also assumes that
-							the "input date" has already been validated to be a "good date" and as a date after
-							1600.</span
+							the "input date" has already been validated to be a "good date" and as a date after 1600.</span
 						>
 					</p>
 					<p class="MsoNormal" style="text-align: left">
@@ -8794,8 +7559,7 @@
 						<span style="mso-bookmark: Sample_date"
 							><span style="font-family: Courier"
 								>&nbsp;&nbsp;&nbsp;&nbsp;Move Corr Input-Date to Reformatted-Input-Date<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;Compute INT-Inp-date = Function Integer-of-Date
-								(Num-Input-Date)<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;Compute INT-Inp-date = Function Integer-of-Date (Num-Input-Date)<br>
 								&nbsp;&nbsp;&nbsp;&nbsp;End-Compute<br>
 								&nbsp;&nbsp;&nbsp;&nbsp;If Int-Inp-Date &gt; Int-Cur-Date<br>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Display "Whatever happens when Input
@@ -8829,7 +7593,8 @@
 					</p>
 					<span style="mso-bookmark: Sample_date"></span>
 					<p class="H4">
-						<a id="Sample_os390"></a><span style="mso-bookmark: Sample_os390">Appendix A.3 - MVS (or OS/390) Control Blocks</span>
+						<a id="Sample_os390"></a
+						><span style="mso-bookmark: Sample_os390">Appendix A.3 - MVS (or OS/390) Control Blocks</span>
 					</p>
 					<span style="mso-bookmark: Sample_os390"></span>
 					<p class="MsoNormal">
@@ -8854,13 +7619,15 @@
 					</p>
 
 					<p class="H4">
-						<a id="Sample_right"></a><span style="mso-bookmark: Sample_right"
+						<a id="Sample_right"></a
+						><span style="mso-bookmark: Sample_right"
 							>Appendix A.4 - How to "right justify" an alphanumeric field</span
 						>
 					</p>
 					<span style="mso-bookmark: Sample_right"></span>
 					<p class="MsoNormal" style="text-align: center">
-						<b style="mso-bidi-font-weight: normal">VERY MUCH</b> still "under review"
+						<b style="mso-bidi-font-weight: normal">VERY MUCH</b>
+						still "under review"
 					</p>
 					<p class="MsoNormal">Assignment:</p>
 					<p class="MsoNormal">
@@ -8873,9 +7640,7 @@
 						justified").
 					</p>
 
-					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">
-						Solution 1:
-					</p>
+					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">Solution 1:</p>
 
 					<p
 						class="MsoNormal"
@@ -8951,9 +7716,7 @@
 					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">
 						<span style="font-family: Courier"></span>
 					</p>
-					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">
-						Solution 2:
-					</p>
+					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">Solution 2:</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-align: left">
 						<span style="font-family: Courier"
 							>01&nbsp;&nbsp;INPUT-FIELD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PIC&nbsp;&nbsp;X(50).<br>
@@ -8980,11 +7743,9 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IF (OUTPUT-PTR &lt; 1)<br>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COMPUTE INPUT-PTR =
 							2 - OUTPUT-PTR<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE 1 TO
-							OUTPUT-PTR<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE 1 TO OUTPUT-PTR<br>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ELSE<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE 1 TO
-							INPUT-PTR<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE 1 TO INPUT-PTR<br>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;END-IF<br>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE INPUT-FIELD(INPUT-PTR:) TO
 							OUTPUT-FIELD(OUTPUT-PTR:)<br>
@@ -8993,9 +7754,7 @@
 						>
 						<span style="font-size: 11pt; mso-bidi-font-size: 10pt; font-family: Courier">&gt;</span>
 					</p>
-					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">
-						Solution 3:
-					</p>
+					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">Solution 3:</p>
 
 					<p
 						class="MsoNormal"
@@ -9149,9 +7908,7 @@
 						>
 					</p>
 
-					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">
-						Solution 4:
-					</p>
+					<p class="MsoNormal" style="margin: 0in; margin-bottom: 0.0001pt; text-align: left">Solution 4:</p>
 
 					<p
 						class="MsoNormal"
@@ -9300,9 +8057,7 @@
 							>http://www.geocities.com/Eureka/2006/download.htm</a
 						>
 					</p>
-					<p class="MsoNormal">
-						and look specifically for (zip file):
-					</p>
+					<p class="MsoNormal">and look specifically for (zip file):</p>
 					<span style="mso-bookmark: _Hlt462221800"></span>
 					<p class="MsoNormal" style="text-indent: 0.5in">
 						<a href="http://www.geocities.com/Eureka/2006/cutenum.zip"
@@ -9333,8 +8088,8 @@
 					<p class="H3">
 						<a id="App_MiscWeb"></a><a id="AppB"></a
 						><span style="mso-bookmark: App_MiscWeb"
-							><span style="mso-bookmark: AppB">Appendix B -</span> Miscellaneous COBOL related web
-							pages</span
+							><span style="mso-bookmark: AppB">Appendix B -</span>
+							Miscellaneous COBOL related web pages</span
 						>
 					</p>
 					<p class="MsoNormal">
@@ -9414,10 +8169,8 @@
 								></span
 							></span
 						>
-						<a href="http://www.cobolportal.com/">http://www.cobolportal.com/</a> (<span
-							style="color: #480c56"
-							>The COBOL Portal)</span
-						>
+						<a href="http://www.cobolportal.com/">http://www.cobolportal.com/</a>
+						(<span style="color: #480c56">The COBOL Portal)</span>
 					</p>
 					<p
 						class="MsoNormal"
@@ -9547,8 +8300,8 @@
 								></span
 							></span
 						>
-						<a href="http://www.aboutlegacycoding.com/">http://www.aboutlegacycoding.com/</a> (About Legacy
-						Coding)
+						<a href="http://www.aboutlegacycoding.com/">http://www.aboutlegacycoding.com/</a>
+						(About Legacy Coding)
 					</p>
 					<p
 						class="MsoNormal"
@@ -9582,7 +8335,8 @@
 						of this document.
 					</p>
 					<p class="H4">
-						<a id="AppA1"></a><span style="mso-bookmark: AppA1">Appendix C.1 - Changes to create Version 2.0</span>
+						<a id="AppA1"></a
+						><span style="mso-bookmark: AppA1">Appendix C.1 - Changes to create Version 2.0</span>
 					</p>
 					<span style="mso-bookmark: AppA1"></span>
 					<p class="MsoNormal">
@@ -9843,9 +8597,7 @@
 							>Added information on getting a "COBOL Tutor" &gt;</span
 						>
 					</p>
-					<p class="H4">
-						Appendix C.4 - Changes to create Versio<a id="App_Upd209"></a>n 2.09
-					</p>
+					<p class="H4">Appendix C.4 - Changes to create Versio<a id="App_Upd209"></a>n 2.09</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span style="font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"
 							><span style="mso-list: Ignore"
@@ -9879,7 +8631,8 @@
 						>
 					</p>
 					<p class="H4">
-						<a id="App_Upd301"></a><span style="mso-bookmark: App_Upd301">Appendix C.5 - Changes to create Version 3.01</span>
+						<a id="App_Upd301"></a
+						><span style="mso-bookmark: App_Upd301">Appendix C.5 - Changes to create Version 3.01</span>
 					</p>
 					<p
 						class="MsoNormal"
@@ -9937,19 +8690,19 @@
 						"
 					>
 						<span
-								style="
+							style="
 									font-family: Wingdings;
 									mso-fareast-font-family: Wingdings;
 									mso-bidi-font-family: Wingdings;
 								"
-								><span style="mso-list: Ignore"
-									>•<span style="font: 7pt &quot;Times New Roman&quot;"
-										>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-									></span
+							><span style="mso-list: Ignore"
+								>•<span style="font: 7pt &quot;Times New Roman&quot;"
+									>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
 								></span
-							>
-							Added some new COBOL books (particularly those written or contributed to - by frequent
-							comp.lang.cobol submitters).
+							></span
+						>
+						Added some new COBOL books (particularly those written or contributed to - by frequent
+						comp.lang.cobol submitters).
 					</p>
 					<p
 						class="MsoNormal"
@@ -10179,8 +8932,7 @@
 								font-family: &quot;Courier New&quot;;
 								mso-bidi-font-family: &quot;Times New Roman&quot;;
 							"
-						></span
-						><a href="#Section10">Books about COBOL</a>
+						></span><a href="#Section10">Books about COBOL</a>
 						<span
 							style="
 								font-family: &quot;Courier New&quot;;
@@ -10229,7 +8981,8 @@
 							></span
 						>
 						Add information on the Semantic Designs and
-						<a href="#Tools_Progeni">Progeni</a> tools
+						<a href="#Tools_Progeni">Progeni</a>
+						tools
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span style="font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"
@@ -10240,8 +8993,8 @@
 							></span
 						>
 						Added information on
-						<a href="#com_compaq"><span style="mso-spacerun: yes"></span>Compaq COBOL</a> (both for the
-						formerly DEC COBOL and the formerly TANDEM COBOL)
+						<a href="#com_compaq"><span style="mso-spacerun: yes"></span>Compaq COBOL</a>
+						(both for the formerly DEC COBOL and the formerly TANDEM COBOL)
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span style="font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"
@@ -10379,8 +9132,8 @@
 						>
 						<span style="mso-bidi-font-family: Arial; mso-bidi-font-style: italic"
 							>Added information about <a href="#Tools_COBOL_Explorer">COBOL Explorer</a
-							><b style="mso-bidi-font-weight: normal"></b
-						></span>
+							><b style="mso-bidi-font-weight: normal"></b></span
+						>
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span
@@ -10398,8 +9151,8 @@
 						>
 						<span style="mso-bidi-font-family: Arial; mso-bidi-font-style: italic"
 							>Added information about <a href="#Fujitsu_Siemens">Fujitsu-Siemens</a> commercial COBOL
-							products<b style="mso-bidi-font-weight: normal"></b
-						></span>
+							products<b style="mso-bidi-font-weight: normal"></b></span
+						>
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span
@@ -10424,8 +9177,8 @@
 							></span
 						>
 						<b style="mso-bidi-font-weight: normal"
-							><u><span style="mso-bidi-font-family: Arial; mso-bidi-font-style: italic"></span></u
-						></b>
+							><u><span style="mso-bidi-font-family: Arial; mso-bidi-font-style: italic"></span></u></b
+						>
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span
@@ -10478,8 +9231,8 @@
 									text-decoration: none;
 									text-underline: none;
 								"
-							></span
-						></span>
+							></span></span
+						>
 					</p>
 					<p class="MsoNormal" style="margin-left: 0.5in; text-indent: -0.25in; mso-list: l0 level1 lfo7">
 						<span style="font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"

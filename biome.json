@@ -12,7 +12,8 @@
 			"biome.json",
 			".htmlvalidate.json",
 			"linkinator.config.json",
-			"!!index.html",
+			"index.html",
+			"!!css/word-mso.css",
 			"!!images",
 			"!!**/*.{doc,docx,png,jpg,jpeg,gif,ico,webp}"
 		]
@@ -27,7 +28,33 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"preset": "recommended"
+			"preset": "recommended",
+			"a11y": {
+				"recommended": false
+			},
+			"correctness": {
+				"noUnknownProperty": "off"
+			},
+			"suspicious": {
+				"noUnknownAtRules": "off",
+				"noUselessEscapeInString": "off"
+			},
+			"complexity": {
+				"noImportantStyles": "off"
+			}
+		}
+	},
+	"html": {
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"css": {
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"cssModules": false
 		}
 	},
 	"json": {
