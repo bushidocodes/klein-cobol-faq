@@ -14,11 +14,11 @@
 		"format:check": "biome format ."
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.3",
-		"html-validate": "^11.5.6",
+		"@biomejs/biome": "^2.5.6",
+		"html-validate": "^11.6.0",
 		"http-server": "^14.1.1",
-		"linkinator": "^7.0.0",
-		"start-server-and-test": "^3.0.11"
+		"linkinator": "^8.0.3",
+		"start-server-and-test": "^3.0.12"
 	},
 	"overrides": {
 		"undici": "7.29.0",
